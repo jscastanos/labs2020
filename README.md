@@ -2,7 +2,7 @@
 Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'s Weekly Challenges. You can check it on his [youtube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) or his [website](https://www.iamtimcorey.com/p/c-weekly-challenges).
 
 ## 📝 List of Challenges
-1. foreach
+1. [Foreach](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/1%20-%20Foreach)
 2. Text File
 3. Error Handling
 4. Refactoring
