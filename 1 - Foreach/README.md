@@ -13,4 +13,4 @@
 
 ## Author's Notes
 - Yes, I watch One Piece 😀
-- The original task is to have a Model with 2 string values, but I have 4 (3 strings and 1 boolean). 
+- The bonus task is to have a Model with 2 string values, but I have 4 (3 strings and 1 boolean). 
