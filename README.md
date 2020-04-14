@@ -1,5 +1,5 @@
 ## 💪 Tim Corey's Weekly C# Challenges 
-Here's a collection of my solution to Tim Corey's Weekly Challenges. You can check it on his [youtube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) or his [website](https://www.iamtimcorey.com/p/c-weekly-challenges).
+Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'s Weekly Challenges. You can check it on his [youtube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) or his [website](https://www.iamtimcorey.com/p/c-weekly-challenges).
 
 ## 📝 List of Challenges
 1. foreach
