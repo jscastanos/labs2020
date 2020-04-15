@@ -1,6 +1,6 @@
 ## Challenge
 - Loop through a List using forEach method. ✅
-- **BONUS**: Create a Model and loop through it  ✅
+- **BONUS**: Create a Model and populate a List using it.  ✅
 
 
 ## Output
