@@ -5,7 +5,7 @@
 
 ## Output
 
-![Output Screenshot](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/1%20-%20Foreach/screenshot.JPG)
+![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/1%20-%20Foreach/output.JPG)
 
 ## Author's Notes
 - Yes, I watch One Piece 😀
