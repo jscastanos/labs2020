@@ -3,7 +3,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 
 ## 📝 List of Challenges
 1. [Foreach](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/1%20-%20Foreach) 
-2. Text File
+2. [Text File](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/2%20-%20Text%20Files)
 3. Error Handling
 4. Refactoring
 5. Config File
