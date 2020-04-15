@@ -13,5 +13,5 @@
 
 
 ## Sources
-- [📺 YouTube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) - Challenge Video
+- [YouTube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) - Challenge Video
 
