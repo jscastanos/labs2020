@@ -1,6 +1,6 @@
 ## Challenge
-- Read and Write Data on a Text file ✅
-- **BONUS**: Support Column Order without using Conditional Code (if statement) ✅
+- Read and Write Data on a Text file.
+- **BONUS**: Support Column Order without using Conditional Statement.
 
 ## Output
 ![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/2%20-%20Text%20Files/screen_capture.gif)
