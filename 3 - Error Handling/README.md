@@ -10,10 +10,6 @@
 
 ![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/3%20-%20Error%20Handling/output.JPG)
 
-## Author's Notes
-
-- The challenge is a bit tricky and I'm not sure if I what I did is a fixed in the NullReferenceException part.
-
 ## Sources
 
 - [Challenge Video](https://www.youtube.com/watch?v=T7-zigMDfEQ&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9&index=3)
