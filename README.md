@@ -1,7 +1,11 @@
-## 💪 Tim Corey's Weekly C# Challenges 
+# 💪 Tim Corey's Weekly C# Challenges
+
+## About
+
 Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'s Weekly Challenges. You can check it on his [youtube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) or his [website](https://www.iamtimcorey.com/p/c-weekly-challenges).
 
 ## 📝 List of Challenges
+
 1. [Foreach](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/1%20-%20Foreach) ✅
 2. [Text File](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/2%20-%20Text%20Files) ✅
 3. [Error Handling](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/3%20-%20Error%20Handling/README.md) ✅
@@ -45,32 +49,34 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 41. WPF ToDo List
 42. .Net Core API List
 43. SQL ToDO List
-44. ASP.Net Core Razor Pages ToDo List- Part 1
-44. ASP.Net Core Razor Pages ToDo List - Part 2
-45. ASP.Net Core with Docker
-46. Git Branches
-47. Web File
-48. Azure DevOps
-49. Bulk File Renaming
-50. .Net Command Line
-51. Sample Data Challenge
-52. Soda Machine Project Planning 
-53. Soda Machine Interfaces
-54. Soda Machine Unit Tests
-55. Soda Machine Methods
-56. Soda Machine Data Access
-57. Soda Machine Console - Part 1
-58. Soda Machine Console - Part 2
-59. Soda Machine Source Control
-60. Soda Machine Continuous Integration (CI)
-61. Soda Machine Razor Pages with Auth
-62. Soda Machine Razor Pages User Logic
-63. Soda Machine Razor Pages User UI
-64. Soda Machine Razor Pages Authorization
-65. Soda Machine Razor Pages Admin Coin Inventory
+44. ASP.Net Core Razor Pages
+    - ToDo List- Part 1
+    - ToDo List - Part 2
+    - with Docker
+45. Git Branches
+46. Web File
+47. Azure DevOps
+48. Bulk File Renaming
+49. .Net Command Line
+50. Sample Data Challenge
+51. Soda Machine
+    - Project Planning
+    - Interfaces
+    - Unit Tests
+    - Methods
+    - Data Access
+    - Console - Part 1
+    - Console - Part 2
+    - Source Control
+    - Continuous Integration (CI)
+    - Razor Pages with Auth
+    - Razor Pages User Logic
+    - Razor Pages User UI
+    - Razor Pages Authorization
+    - Razor Pages Admin Coin Inventory
 
+## 🚫 Disclaimer
 
-## 🚫 Disclaimer 
 - These solutions are not guaranted correct since I'm only a free user and I can't view the solutions that Tim Corey provide every week.
 - If you find a better solution than what I did, please tell me. I'm really open to any suggestions.
 - The purpose of this repo is to track my progress and learning and not to promote any illegal or bad behavoir towards the creator of this challenge.
