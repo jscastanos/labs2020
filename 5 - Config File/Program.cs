@@ -1,6 +1,7 @@
 ﻿using _5___Config_File.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Configuration;
 
 namespace _5___Config_File
@@ -12,7 +13,7 @@ namespace _5___Config_File
         public static List<Command> appCommands = new List<Command>();
         public static List<Command> mainCommands = new List<Command>();
         public static bool DidInitialize = false;
-
+        public static Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
         static void Main()
         {
@@ -59,8 +60,7 @@ namespace _5___Config_File
             DisplayCommand(appCommands);
             CheckCommand(appCommands, "Select Mode: ");
 
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var appSettings = ConfigurationManager.AppSettings;
+            NameValueCollection appSettings = ConfigurationManager.AppSettings;
 
             switch (userCommand)
             {
@@ -73,7 +73,7 @@ namespace _5___Config_File
                     Console.Write("Setting Value: ");
                     newSettings[1] = Console.ReadLine();
 
-                    foreach (var key in appSettings.AllKeys)
+                    foreach (string key in appSettings.AllKeys)
                         if (key == newSettings[0] && appSettings[key] == newSettings[1])
                         {
                             DidExist = true;
@@ -118,8 +118,7 @@ namespace _5___Config_File
             DisplayCommand(appCommands);
             CheckCommand(appCommands, "Select Mode: ");
 
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var connectionSettings = ConfigurationManager.ConnectionStrings;
+            ConnectionStringSettingsCollection connectionSettings = ConfigurationManager.ConnectionStrings;
 
             switch (userCommand)
             {
@@ -170,6 +169,7 @@ namespace _5___Config_File
                         Console.WriteLine("App is not connected to any server");
 
                     Console.WriteLine("======================================================================");
+
                     break;
 
                 case "!r":
@@ -181,6 +181,7 @@ namespace _5___Config_File
             Console.WriteLine();
             ConnectionSettings();
         }
+
 
         static void CheckCommand(List<Command> commands, string commandQuestion)
         {
