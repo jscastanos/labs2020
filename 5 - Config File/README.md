@@ -15,6 +15,10 @@ AppSettings Demo
 Connection Demo
 ![output1](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/5%20-%20Config%20File/output2.gif)
 
+## Notes
+
+- Clearly, I went **OVERBOARD** but I'm proud of what I did 😂
+
 ## Sources
 
 - [Challenge Video](https://www.youtube.com/watch?v=8BFIT29asSY&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9&index=5)

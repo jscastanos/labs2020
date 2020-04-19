@@ -9,6 +9,11 @@
 
 ![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/2%20-%20Text%20Files/output.gif)
 
+## Notes
+
+- I used a library to handle the Read and Write action 😉
+- I actually created the entire project, since I can't download the Challenge Starter Code.
+
 ## Sources
 
 - [Challenge Video](https://www.youtube.com/watch?v=huYh1jNdQOE&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9&index=2)
