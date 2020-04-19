@@ -46,7 +46,7 @@ namespace _5___Config_File
 
             /**
              * NOTE: I'm trying to make it as DRY as possible.
-             * So I'll refactor this once, I can find a better way to execute this
+             * So I'll refactor this once I can find a better way to execute this
              * **/
 
             Console.ReadLine();
@@ -60,27 +60,42 @@ namespace _5___Config_File
             CheckCommand(appCommands, "Select Mode: ");
 
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var appSettings = ConfigurationManager.AppSettings;
 
             switch (userCommand)
             {
                 case "!a":
+                    bool DidExist = false;
+
                     Console.Write("Setting Name: ");
                     newSettings[0] = Console.ReadLine();
 
                     Console.Write("Setting Value: ");
                     newSettings[1] = Console.ReadLine();
 
-                    config.AppSettings.Settings.Add(newSettings[0], newSettings[1]);
-                    config.Save(ConfigurationSaveMode.Modified);
-                    ConfigurationManager.RefreshSection("appSettings");
-                    Console.WriteLine("Successfully Added new AppSettings");
+                    foreach (var key in appSettings.AllKeys)
+                        if (key == newSettings[0] && appSettings[key] == newSettings[1])
+                        {
+                            DidExist = true;
+                            break;
+                        }
+
+                    if (!DidExist)
+                    {
+                        config.AppSettings.Settings.Add(newSettings[0], newSettings[1]);
+                        config.Save(ConfigurationSaveMode.Modified);
+                        ConfigurationManager.RefreshSection("appSettings");
+                        Console.WriteLine("\nSuccessfully Added new AppSettings");
+                    }
+                    else
+                        Console.WriteLine("\nCan't Add, AppSetting already exist");
                     break;
 
                 case "!p":
                     Console.WriteLine("======================================================================");
                     if (ConfigurationManager.AppSettings.Count > 0)
-                        foreach (var key in ConfigurationManager.AppSettings.AllKeys)
-                            Console.WriteLine($"- {key} : {ConfigurationManager.AppSettings[key]}");
+                        foreach (var key in appSettings.AllKeys)
+                            Console.WriteLine($"- {key} : {appSettings[key]}");
                     else
                         Console.WriteLine("App doesn't have settings.");
                     Console.WriteLine("======================================================================");
@@ -101,13 +116,16 @@ namespace _5___Config_File
             string[] newSettings = new string[3];
 
             DisplayCommand(appCommands);
-            CheckCommand(appCommands, "Select Mode:: ");
+            CheckCommand(appCommands, "Select Mode: ");
 
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var connectionSettings = ConfigurationManager.ConnectionStrings;
 
             switch (userCommand)
             {
                 case "!a":
+                    bool DidExist = false;
+
                     Console.Write("Connection Name: ");
                     newSettings[0] = Console.ReadLine();
 
@@ -117,26 +135,43 @@ namespace _5___Config_File
                     Console.Write("Connection Provider: ");
                     newSettings[2] = Console.ReadLine();
 
-                    config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings
+                    foreach (ConnectionStringSettings key in connectionSettings)
+                        if (key.Name == newSettings[0] && key.ConnectionString == newSettings[1] && key.ProviderName == newSettings[2])
+                        {
+                            DidExist = true;
+                            break;
+                        }
+
+
+                    if (!DidExist)
                     {
-                        Name = newSettings[0],
-                        ConnectionString = newSettings[1],
-                        ProviderName = newSettings[2]
-                    });
-                    config.Save(ConfigurationSaveMode.Modified);
-                    ConfigurationManager.RefreshSection("configSections");
-                    Console.WriteLine("Successfully Added new Connection");
+                        config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings
+                        {
+                            Name = newSettings[0],
+                            ConnectionString = newSettings[1],
+                            ProviderName = newSettings[2]
+                        });
+
+                        config.Save(ConfigurationSaveMode.Modified);
+                        ConfigurationManager.RefreshSection("configSections");
+                        Console.WriteLine("Successfully Added new Connection");
+                    }
+                    else
+                        Console.WriteLine("Connection already exist");
+
                     break;
+
                 case "!p":
                     Console.WriteLine("======================================================================");
-                    if (ConfigurationManager.ConnectionStrings.Count > 0)
-                        foreach (ConnectionStringSettings key in ConfigurationManager.ConnectionStrings)
+                    if (connectionSettings.Count > 0)
+                        foreach (ConnectionStringSettings key in connectionSettings)
                             Console.WriteLine($"- {key.Name} : {key.ConnectionString}");
                     else
                         Console.WriteLine("App is not connected to any server");
 
                     Console.WriteLine("======================================================================");
                     break;
+
                 case "!r":
                     Main();
                     break;
@@ -178,7 +213,6 @@ namespace _5___Config_File
 
             Console.WriteLine("");
         }
-
 
 
     }

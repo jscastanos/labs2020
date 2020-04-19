@@ -18,6 +18,7 @@ Connection Demo
 ## Notes
 
 - Clearly, I went **OVERBOARD** but I'm proud of what I did 😂
+- I found out that EF caches connection string, so there isn't no method to force a refresh. (For Now)
 
 ## Sources
 
