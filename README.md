@@ -8,7 +8,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 2. [Text File](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/2%20-%20Text%20Files) ✅
 3. [Error Handling](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/3%20-%20Error%20Handling/README.md) ✅
 4. Refactoring
-5. Config File
+5. [Config File](https://github.com/jscastanos/TCWeeklyChallenges/tree/master/5%20-%20Config%20File)
 6. DateTime
 7. Pill Reminder
 8. Web Deployment
