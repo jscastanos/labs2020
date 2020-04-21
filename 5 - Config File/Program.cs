@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.Linq;
 
 namespace _5___Config_File
 {
     class Program
     {
-
         public static string userCommand;
         public static List<Command> appCommands = new List<Command>();
         public static List<Command> mainCommands = new List<Command>();
@@ -29,9 +29,8 @@ namespace _5___Config_File
             }
 
             Console.WriteLine("Config File Challenge.");
-            DisplayCommand(mainCommands);
-
-            CheckCommand(mainCommands, "Choose: ");
+            Command.DisplayCommand(mainCommands);
+            userCommand = Command.CheckCommand(mainCommands, "Choose: ");
 
             //execute
             switch (userCommand)
@@ -57,8 +56,8 @@ namespace _5___Config_File
         {
             string[] newSettings = new string[2];
 
-            DisplayCommand(appCommands);
-            CheckCommand(appCommands, "Select Mode: ");
+            Command.DisplayCommand(appCommands);
+            userCommand = Command.CheckCommand(appCommands, "Select Mode: ");
 
             NameValueCollection appSettings = ConfigurationManager.AppSettings;
 
@@ -95,9 +94,10 @@ namespace _5___Config_File
                     Console.WriteLine("======================================================================");
                     if (ConfigurationManager.AppSettings.Count > 0)
                         foreach (var key in appSettings.AllKeys)
-                            Console.WriteLine($"- {key} : {appSettings[key]}");
+                            Console.WriteLine($"- {key} : { appSettings[key] }");
                     else
                         Console.WriteLine("App doesn't have settings.");
+
                     Console.WriteLine("======================================================================");
                     break;
 
@@ -115,8 +115,8 @@ namespace _5___Config_File
         {
             string[] newSettings = new string[3];
 
-            DisplayCommand(appCommands);
-            CheckCommand(appCommands, "Select Mode: ");
+            Command.DisplayCommand(appCommands);
+            userCommand = Command.CheckCommand(appCommands, "Select Mode: ");
 
             ConnectionStringSettingsCollection connectionSettings = ConfigurationManager.ConnectionStrings;
 
@@ -181,40 +181,6 @@ namespace _5___Config_File
             Console.WriteLine();
             ConnectionSettings();
         }
-
-
-        static void CheckCommand(List<Command> commands, string commandQuestion)
-        {
-            bool IsCommandValid = false;
-            while (true)
-            {
-                Console.Write(commandQuestion);
-
-                userCommand = Console.ReadLine();
-                Console.WriteLine();
-
-                foreach (var command in commands)
-                    if (command.Key.Equals(userCommand))
-                    {
-                        IsCommandValid = true;
-                        break;
-                    }
-
-                if (!IsCommandValid)
-                    Console.WriteLine($"Can't recognized \"{userCommand}\" as command\n");
-                else
-                    break;
-            }
-        }
-
-        static void DisplayCommand(List<Command> commands)
-        {
-            foreach (var command in commands)
-                Console.WriteLine($"{command.Name} : {command.Key}");
-
-            Console.WriteLine("");
-        }
-
 
     }
 }

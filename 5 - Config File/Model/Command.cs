@@ -1,4 +1,7 @@
-﻿namespace _5___Config_File.Model
+﻿using System;
+using System.Collections.Generic;
+
+namespace _5___Config_File.Model
 {
 
     public class Command
@@ -10,6 +13,41 @@
         {
             this.Name = name;
             this.Key = key;
+        }
+
+
+        public static string CheckCommand(List<Command> commands, string commandQuestion)
+        {
+            bool IsCommandValid = false;
+            string userCommand;
+
+            while (true)
+            {
+                Console.Write(commandQuestion);
+
+                userCommand = Console.ReadLine();
+                Console.WriteLine();
+
+                foreach (var command in commands)
+                    if (command.Key.Equals(userCommand))
+                    {
+                        IsCommandValid = true;
+                        break;
+                    }
+
+                if (!IsCommandValid)
+                    Console.WriteLine($"Can't recognized \"{userCommand}\" as command\n");
+                else
+                    return userCommand;
+            }
+        }
+
+        public static void DisplayCommand(List<Command> commands)
+        {
+            foreach (var command in commands)
+                Console.WriteLine($"{command.Name} : {command.Key}");
+
+            Console.WriteLine("");
         }
     }
 
