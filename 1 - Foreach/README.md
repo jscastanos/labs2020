@@ -7,7 +7,7 @@
 
 ## Output
 
-![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/1%20-%20Foreach/output.JPG)
+![output](./output.JPG)
 
 ## Notes
 
