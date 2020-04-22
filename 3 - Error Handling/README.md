@@ -8,7 +8,7 @@
 
 ## Output
 
-![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/3%20-%20Error%20Handling/output.JPG)
+![output](./output.JPG)
 
 ## Notes
 
