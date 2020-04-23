@@ -7,7 +7,7 @@
 
 ## Output
 
-- Compare 056ac2280d58dce0f612eff1e0530d3a5bb5b6ad (Unchanged) to 20b97a653f191a16e394959299f6cfc51bb4f21c (Refactored)
+- Compare [056ac22](https://github.com/jscastanos/TCWeeklyChallenges/commit/20b97a653f191a16e394959299f6cfc51bb4f21c) (Unchanged) to [20b97a6](https://github.com/jscastanos/TCWeeklyChallenges/commit/056ac2280d58dce0f612eff1e0530d3a5bb5b6ad) (Refactored)
 
 ## Notes
 
