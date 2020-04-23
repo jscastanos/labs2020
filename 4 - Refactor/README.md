@@ -7,6 +7,8 @@
 
 ## Output
 
+- Compare 056ac2280d58dce0f612eff1e0530d3a5bb5b6ad (Unchanged) to 20b97a653f191a16e394959299f6cfc51bb4f21c (Refactored)
+
 ## Notes
 
 - I made it as DRY as possible 😉
