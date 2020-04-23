@@ -23,5 +23,14 @@ namespace _2___Text_Files.Models
             this.Age = Age;
             this.IsAlive = IsAlive;
         }
+
+        public string FullText
+        {
+            get
+            {
+                return $"{FirstName} {LastName} is {Age} and is {(IsAlive ? "alive" : "dead")}";
+            }
+        }
+
     }
 }

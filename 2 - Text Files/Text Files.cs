@@ -22,15 +22,17 @@ namespace _2___Text_Files
 
         private void BtnAddUser_Click(object sender, EventArgs e)
         {
-            string firstName = txtFname.Text;
-            string lastName = txtLname.Text;
-            decimal age = numAge.Value;
-            bool isAlive = chkIsAlive.Checked;
+            Person person = new Person(
+                FirstName: txtFname.Text,
+                LastName: txtLname.Text,
+                Age: numAge.Value,
+                IsAlive: chkIsAlive.Checked
+                ); ;
 
-            if (firstName.Length > 0 && lastName.Length > 0 && age > 0)
+
+            if (person.FirstName.Length > 0 && person.LastName.Length > 0 && person.Age > 0)
             {
-                tempPersons.Add(new Person(firstName, lastName, age, isAlive));
-                lstUsers.Items.Add($"{firstName} {lastName} is {age} and is {(isAlive ? "alive" : "dead")}");
+                AddToList(person);
 
                 //reset value
                 txtFname.Text = "";
@@ -57,8 +59,7 @@ namespace _2___Text_Files
                 foreach (var item in records)
                 {
                     currentDataCount++;
-                    tempPersons.Add(new Person(item.FirstName, item.LastName, item.Age, item.IsAlive));
-                    lstUsers.Items.Add($"{item.FirstName} {item.LastName} is {item.Age} and is {(item.IsAlive ? "alive" : "dead")}");
+                    AddToList(item);
                 }
             }
         }
@@ -77,6 +78,13 @@ namespace _2___Text_Files
                     MessageBox.Show("Save successfully");
                 }
             }
+        }
+
+        private void AddToList(Person data)
+        {
+
+            tempPersons.Add(new Person(data.FirstName, data.LastName, data.Age, data.IsAlive));
+            lstUsers.Items.Add(data.FullText);
         }
     }
 }
