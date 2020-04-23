@@ -10,10 +10,10 @@
 ## Output
 
 AppSettings Demo
-![output1](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/5%20-%20Config%20File/output1.gif)
+![output1](./output1.gif)
 
 Connection Demo
-![output1](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/5%20-%20Config%20File/output2.gif)
+![output1](./output2.gif)
 
 ## Notes
 

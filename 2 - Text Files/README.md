@@ -7,7 +7,7 @@
 
 ## Output
 
-![output](https://github.com/jscastanos/TCWeeklyChallenges/blob/master/2%20-%20Text%20Files/output.gif)
+![output](./output.gif)
 
 ## Notes
 
