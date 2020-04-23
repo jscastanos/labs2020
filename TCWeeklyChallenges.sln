@@ -19,6 +19,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DapperDemoDB", "4 - Refacto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormApp", "4 - Refactor\WinFormApp\WinFormApp.csproj", "{2E2BDB20-8771-41EE-AEAF-62C20EA56C70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refactor.Library", "4 - Refactor\Refactor.Library\Refactor.Library.csproj", "{3011E90F-580C-47EA-BA02-6D5706B4E052}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{2E2BDB20-8771-41EE-AEAF-62C20EA56C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E2BDB20-8771-41EE-AEAF-62C20EA56C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E2BDB20-8771-41EE-AEAF-62C20EA56C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3011E90F-580C-47EA-BA02-6D5706B4E052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3011E90F-580C-47EA-BA02-6D5706B4E052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3011E90F-580C-47EA-BA02-6D5706B4E052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3011E90F-580C-47EA-BA02-6D5706B4E052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{0BA17008-ADC8-4080-B499-69101E8F176E} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
 		{81B5F5DA-D8F7-456F-9F5C-45D3AAA2791A} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
 		{2E2BDB20-8771-41EE-AEAF-62C20EA56C70} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
+		{3011E90F-580C-47EA-BA02-6D5706B4E052} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE6BF077-896A-41FC-B526-2F30D5EBA574}

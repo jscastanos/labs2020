@@ -85,5 +85,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Refactor.Library\Refactor.Library.csproj">
+      <Project>{3011E90F-580C-47EA-BA02-6D5706B4E052}</Project>
+      <Name>Refactor.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

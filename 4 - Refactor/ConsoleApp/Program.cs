@@ -1,62 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
+﻿using Refactor.Library;
+using System;
 
 namespace ConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        public static DataAccessLayer dataAccess = new DataAccessLayer();
+        static void Main()
         {
             string actionToTake = "";
-            string connectionString = ConfigurationManager.ConnectionStrings["DapperDemoDB"].ConnectionString;
 
             do
             {
-                Console.Write("What action do you want to take (Display, Add, or Quit): ");
-                actionToTake = Console.ReadLine();
+                actionToTake = GetUserInput("What action do you want to take (Display, Add, or Quit): ");
 
                 switch (actionToTake.ToLower())
                 {
                     case "display":
-                        using (IDbConnection cnn = new SqlConnection(connectionString))
-                        {
-                            var records = cnn.Query<UserModel>("spSystemUser_Get", commandType: CommandType.StoredProcedure).ToList();
-
-                            Console.WriteLine();
-                            records.ForEach(x => Console.WriteLine($"{ x.FirstName } { x.LastName }"));
-                        }
+                        var records = dataAccess.GetUser();
+                        Console.WriteLine();
+                        records.ForEach(x => Console.WriteLine(x.FullName));
                         Console.WriteLine();
                         break;
+
                     case "add":
-                        Console.Write("What is the first name: ");
-                        string firstName = Console.ReadLine();
-
-                        Console.Write("What is the last name: ");
-                        string lastName = Console.ReadLine();
-
-                        using (IDbConnection cnn = new SqlConnection(connectionString))
+                        var user = new
                         {
-                            var p = new
-                            {
-                                FirstName = firstName,
-                                LastName = lastName
-                            };
+                            FirstName = GetUserInput("What is the first name: "),
+                            LastName = GetUserInput("What is the last name: ")
+                        };
 
-                            cnn.Execute("dbo.spSystemUser_Create", p, commandType: CommandType.StoredProcedure);
-                        }
+                        dataAccess.CreateUser(user);
                         Console.WriteLine();
                         break;
                     default:
                         break;
                 }
             } while (actionToTake.ToLower() != "quit");
+        }
+
+        static string GetUserInput(string message)
+        {
+            Console.WriteLine(message);
+            return Console.ReadLine();
         }
     }
 }
