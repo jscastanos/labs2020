@@ -7,7 +7,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 1. [Foreach](./1%20-%20Foreach) ✅
 2. [Text File](./2%20-%20Text%20Files) ✅
 3. [Error Handling](./3%20-%20Error%20Handling) ✅
-4. Refactoring
+4. [Refactoring](./4%20-%20Refactor) ✅
 5. [Config File](./5%20-%20Config%20File) ✅
 6. DateTime
 7. Pill Reminder
