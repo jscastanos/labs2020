@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refactor.Library", "4 - Ref
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Completed", "Completed", "{E1CFD345-C4E9-4C7F-8D40-B5204A0F4D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6 - DateTime", "5 - DateTime\6 - DateTime.csproj", "{2E83B762-5343-4232-8B69-167EB0962C3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6 - DateTime", "6 - DateTime\6 - DateTime.csproj", "{2E83B762-5343-4232-8B69-167EB0962C3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
