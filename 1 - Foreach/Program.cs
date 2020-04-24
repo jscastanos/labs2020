@@ -63,7 +63,7 @@ namespace _1___Foreach
                               "===================================================");
 
             foreach (var name in names)
-                Console.WriteLine($"{name.FullName} - {name.Profession}  - \"{name.Ephithet}\" - {name.Bounty}");
+                Console.WriteLine(name.Description);
         }
     }
 }

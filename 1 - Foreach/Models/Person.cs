@@ -14,5 +14,13 @@
             this.Bounty = Bounty;
             this.Ephithet = Ephithet;
         }
+
+        public string Description
+        {
+            get
+            {
+                return $"{FullName} - {Profession}  - \"{Ephithet}\" - {Bounty}";
+            }
+        }
     }
 }
