@@ -11,6 +11,8 @@ namespace _1___Foreach
             // MAIN: 
             MainChallenge();
 
+            Console.WriteLine("\n");
+
             // BONUS: 
             BonusChallenge();
 
@@ -36,11 +38,7 @@ namespace _1___Foreach
             Console.WriteLine("MAIN: Foreach with Regular List \n");
 
             foreach (var name in names)
-            {
                 Console.WriteLine($"Hello {name}");
-            }
-
-            Console.WriteLine("\n");
         }
 
         private static void BonusChallenge()
@@ -60,17 +58,12 @@ namespace _1___Foreach
 
 
 
-            Console.WriteLine("BONUS: Foreach using Models \n");
-            Console.WriteLine("Full Name - Profession - Ephithet - Bounty (Model Properties)");
-            Console.WriteLine("===================================================");
+            Console.WriteLine("BONUS: Foreach using Models \n" +
+                              "Full Name - Profession - Ephithet - Bounty (Model Properties) \n" +
+                              "===================================================");
 
             foreach (var name in names)
-            {
                 Console.WriteLine($"{name.FullName} - {name.Profession}  - \"{name.Ephithet}\" - {name.Bounty}");
-            }
-
-            Console.WriteLine("\n");
-
         }
     }
 }
