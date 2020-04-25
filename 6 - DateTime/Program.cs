@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace _6___DateTime
 {
@@ -18,7 +15,7 @@ namespace _6___DateTime
 
             while (true)
             {
-                switch (SelectOptions("Please Select: ", options))
+                switch (SelectOptions(options, "Please Select: "))
                 {
                     case 1:
                         CalculateDate();
@@ -37,7 +34,7 @@ namespace _6___DateTime
             Regex dateRX = new Regex(@"^(\d{1,2})-(\d{1,2})-(\d{1,4})$");
 
             string[] format = new string[2] { "MM-dd-yyyy", "dd-MM-yyyy" };
-            int formatIndex = SelectOptions("Select Date Format: ", format);
+            int formatIndex = SelectOptions(format, "Select Date Format: ");
             string dateStr;
 
             Console.WriteLine("Please not that the system only accepts \"-\" or dash as date separator");
@@ -73,43 +70,73 @@ namespace _6___DateTime
 
         static void CalculateTime()
         {
-            //    Regex timeRx1 = new Regex(@"^(\d{1,2}):(\d{1,2})$");
-            //    Regex timeRx2 = new Regex(@"^(\d{1,2}):(\d{1,2}) ([AP]M)$");
+            Regex timeRx1 = new Regex(@"^(\d{1,2}):(\d{1,2}) ([aApP][mM])$");
+            Regex timeRx2 = new Regex(@"^(\d{1,2}):(\d{1,2})$");
 
-            //    string[] formats = new string[2] { "12 hr (AM/PM)", "24 hr" };
-            //    int formatIndex = SelectOptions("Select Time Format", formats);
-            //    string timeStr;
+            string[] formats = new string[2] { "12 hr AM/PM", "24 hr" };
+            int formatIndex = SelectOptions(formats, "Select Time Format: ");
+            string timeStr;
 
-            //    Console.Write($"Enter a ({formats[formatIndex - 1]}) time: ");
-            //    timeStr = Console.ReadLine();
+            Console.Write($"Enter a ({formats[formatIndex - 1]}) time: ");
+            timeStr = Console.ReadLine();
 
-            //    if (timeRx1.IsMatch(timeStr))
-            //    {
-            //        var splitTime = timeStr.Split(':').Select(Int32.Parse).ToArray();
+            int[] splitTime;
 
-            //        if (splitTime[0] > 12 && formatIndex == 1)
-            //            Console.WriteLine("Invalid 12 hr time");
-            //        else
-            //        {
-            //            if (formatIndex == 1)
-            //            {
-            //                bool IsAM =
-            //            }
+            switch (formatIndex)
+            {
+                case 1 when timeRx1.IsMatch(timeStr):
+                    var tempTime = timeStr.Split(' ').ToArray();
+                    string period = tempTime[1];
+                    splitTime = SplitTime(tempTime[0], ':');
 
-            //            //TimeSpan newTime,
-            //            //         timeDiff;
+                    if (splitTime[0] <= 12)
+                    {
+                        if (period.ToLower().Equals("pm") && splitTime[0] != 12)
+                            splitTime[0] += 12;
 
-            //            //newTime = new TimeSpan(splitTime[0], splitTime[1], 0);
-            //            //timeDiff = DateTime.Now.TimeOfDay -
-            //        }
+                        DisplayTimeDifference(splitTime);
 
-            //    }
-            //    else Console.WriteLine("Invalid Time\n");
-            Console.WriteLine("TIME");
+                    }
+                    else goto default;
+                    break;
+
+                case 2 when timeRx2.IsMatch(timeStr):
+                    splitTime = SplitTime(timeStr, ':');
+
+                    if (splitTime[0] <= 24)
+                        DisplayTimeDifference(splitTime);
+                    else goto default;
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid Time\n");
+                    break;
+
+            }
 
         }
 
-        static int SelectOptions(string message, string[] options)
+        static int[] SplitTime(string time, char separator)
+        {
+            return time.Split(separator).Select(Int32.Parse).ToArray();
+        }
+
+        static void DisplayTimeDifference(int[] time)
+        {
+            try
+            {
+                TimeSpan timeNow = DateTime.Now.TimeOfDay;
+
+                var timeDiff = timeNow - new TimeSpan(time[0], time[1], 0);
+                Console.WriteLine($"The time is { Math.Abs(timeDiff.Hours) } hours and { Math.Abs(timeDiff.Minutes) }  minutes {(timeDiff.Hours > 0 ? "ago" : "from now")}\n");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message} \n");
+            }
+        }
+
+        static int SelectOptions(string[] options, string message)
         {
             while (true)
             {
