@@ -1,8 +1,13 @@
 # 💪 Tim Corey's Weekly C# Challenges
 
+ ![Size](https://img.shields.io/github/repo-size/jscastanos/TCWeeklyChallenges)
+ ![Commit](https://img.shields.io/github/commit-activity/w/jscastanos/TCWeeklyChallenges)
+ ![Language](https://img.shields.io/github/languages/count/jscastanos/TCWeeklyChallenges)
+ ![License](https://img.shields.io/github/license/jscastanos/TCWeeklyChallenges)
+
 Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'s Weekly Challenges. You can check it on his [youtube](https://www.youtube.com/watch?v=pxdwwgIja5Q&list=PLLWMQd6PeGY1VcJGocm1wwtFCZUrh2sc9) or his [website](https://www.iamtimcorey.com/p/c-weekly-challenges).
 
-## 📌 List of Challenges - <span>![Progress](https://progress-bar.dev/6/?scale=68&title=progress&width=120&suffix=%)</span>
+## 📌 List of Challenges
 
 1. [Foreach](./1%20-%20Foreach) ✅
 2. [Text File](./2%20-%20Text%20Files) ✅
