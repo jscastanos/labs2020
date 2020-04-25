@@ -9,7 +9,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 3. [Error Handling](./3%20-%20Error%20Handling) ✅
 4. [Refactoring](./4%20-%20Refactor) ✅
 5. [Config File](./5%20-%20Config%20File) ✅
-6. DateTime
+6. [DateTime](./6%20-%20DateTime) ✅
 7. Pill Reminder
 8. Web Deployment
 9. Database Design
