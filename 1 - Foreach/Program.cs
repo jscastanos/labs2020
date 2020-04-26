@@ -8,41 +8,6 @@ namespace _1___Foreach
     {
         static void Main()
         {
-            // MAIN: 
-            MainChallenge();
-
-            Console.WriteLine("\n");
-
-            // BONUS: 
-            BonusChallenge();
-
-            Console.ReadLine();
-        }
-
-        private static void MainChallenge()
-        {
-            List<string> names = new List<string>
-            {
-                "Monkey D. Luffy",
-                "Roronoa Zoro",
-                "Nami",
-                "Usopp",
-                "Vinsmoke Sanji",
-                "Tony Tony Chopper",
-                "Nico Robin",
-                "Franky",
-                "Brook",
-                "Jinbe"
-            };
-
-            Console.WriteLine("MAIN: Foreach with Regular List \n");
-
-            foreach (var name in names)
-                Console.WriteLine($"Hello {name}");
-        }
-
-        private static void BonusChallenge()
-        {
             List<Person> names = new List<Person> {
                 new Person("Monkey D. Luffy", "Captian", 1_500_000_000, "Straw Hat"),
                 new Person("Roronoa Zoro", "Combatant", 320_000_000, "Pirate Hunter"),
@@ -58,12 +23,14 @@ namespace _1___Foreach
 
 
 
-            Console.WriteLine("BONUS: Foreach using Models \n" +
-                              "Full Name - Profession - Ephithet - Bounty (Model Properties) \n" +
+            Console.WriteLine("Full Name - Profession - Ephithet - Bounty (Model Properties) \n" +
                               "===================================================");
 
             foreach (var name in names)
                 Console.WriteLine(name.Description);
+
+            Console.ReadLine();
         }
+
     }
 }

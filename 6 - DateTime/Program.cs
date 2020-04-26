@@ -55,7 +55,9 @@ namespace _6___DateTime
                     else
                         newDate = Convert.ToDateTime(splitDate[1] + "-" + splitDate[0] + "-" + splitDate[2]);
 
-                    Console.WriteLine($"It has been { (DateTime.Now - newDate).Days } days since { newDate.ToString(format[formatIndex - 1])} \n");
+                    int dateDiff = (DateTime.Now - newDate).Days;
+
+                    Console.WriteLine($"It has been { Math.Abs(dateDiff) } days {(dateDiff > 0 ? "since" : "from")} { newDate.ToString(format[formatIndex - 1])} \n");
                 }
                 catch (Exception ex)
                 {
