@@ -43,7 +43,7 @@ namespace PillReminderUI
             if (temp.Count() != pillsToTake.Count())
             {
                 pillsToTake = new BindingList<PillModel>(temp);
-                pillsToTakeListBox.DataSource = pillsToTake.OrderBy(o => o.TimeToTake).ToList(); ;
+                pillsToTakeListBox.DataSource = pillsToTake.OrderBy(o => o.TimeToTake).ToList();
                 pillsToTakeListBox.DisplayMember = "PillInfo";
             }
         }
@@ -62,7 +62,6 @@ namespace PillReminderUI
                     break;
                 }
             }
-
         }
     }
 }
