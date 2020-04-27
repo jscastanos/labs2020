@@ -16,7 +16,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 4. [Refactoring](./4%20-%20Refactor) ✅
 5. [Config File](./5%20-%20Config%20File) ✅
 6. [DateTime](./6%20-%20DateTime) ✅
-7. Pill Reminder
+7. [Pill Reminder](./7%20-%20Pill%20Reminder) ✅
 8. Web Deployment
 9. Database Design
 10. Performance Evaluation
