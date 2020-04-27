@@ -12,9 +12,8 @@ namespace _2___Text_Files
     public partial class frmTextFile : Form
     {
         readonly List<Person> tempPersons = new List<Person>();
-        readonly string csvPath = "../../Data/users.csv";
+        readonly string csvPath = @".\Data\users.csv";
         int currentDataCount = 0;
-
         public frmTextFile()
         {
             InitializeComponent();
@@ -50,17 +49,14 @@ namespace _2___Text_Files
 
         private void FrmTextFile_Load(object sender, EventArgs e)
         {
+            using var reader = new StreamReader(csvPath);
+            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+            var records = csv.GetRecords<Person>();
 
-            using (var reader = new StreamReader(csvPath))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            foreach (var item in records)
             {
-                var records = csv.GetRecords<Person>();
-
-                foreach (var item in records)
-                {
-                    currentDataCount++;
-                    AddToList(item);
-                }
+                currentDataCount++;
+                AddToList(item);
             }
         }
 
@@ -69,14 +65,12 @@ namespace _2___Text_Files
             //check if there's new data
             if (currentDataCount < tempPersons.Count())
             {
-                using (var writer = new StreamWriter(csvPath))
-                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csv.WriteRecords(tempPersons);
-                    writer.Flush();
+                using var writer = new StreamWriter(csvPath);
+                using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
+                csv.WriteRecords(tempPersons);
+                writer.Flush();
 
-                    MessageBox.Show("Save successfully");
-                }
+                MessageBox.Show("Save successfully");
             }
         }
 

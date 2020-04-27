@@ -1,22 +1,24 @@
 ﻿using Dapper;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 
 namespace Refactor.Library
 {
     public class DataAccessLayer
     {
-        public static string connectionString = ConfigurationManager.ConnectionStrings["DapperDemoDb"].ConnectionString;
-        readonly IDbConnection cnn = new SqlConnection(connectionString);
+        public static string connectionString = ConfigurationManager.ConnectionStrings["DapperDemoDB"].ConnectionString;
 
+        readonly IDbConnection cnn = new SqlConnection(connectionString);
 
         public List<UserModel> GetUser()
         {
             return cnn.Query<UserModel>("spSystemUser_Get", commandType: CommandType.StoredProcedure).ToList();
-
         }
 
 

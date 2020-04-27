@@ -1,11 +1,14 @@
 ﻿using Refactor.Library;
 using System;
+using System.Data;
+using System.Linq;
 
 namespace ConsoleApp
 {
     class Program
     {
         public static DataAccessLayer dataAccess = new DataAccessLayer();
+
         static void Main()
         {
             string actionToTake = "";
@@ -36,6 +39,9 @@ namespace ConsoleApp
                     default:
                         break;
                 }
+
+
+
             } while (actionToTake.ToLower() != "quit");
         }
 
