@@ -47,7 +47,6 @@ namespace _5___Config_File
              * NOTE: I'm trying to make it as DRY as possible.
              * So I'll refactor this once I can find a better way to execute this
              * **/
-
             Console.ReadLine();
         }
 
@@ -104,8 +103,6 @@ namespace _5___Config_File
                     Main();
                     break;
             }
-
-
             Console.WriteLine();
             AppSettings();
         }
@@ -175,8 +172,6 @@ namespace _5___Config_File
                     Main();
                     break;
             }
-
-
             Console.WriteLine();
             ConnectionSettings();
         }
