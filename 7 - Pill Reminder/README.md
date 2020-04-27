@@ -12,7 +12,7 @@
 ## Note
 
 - I Ported the StarterCode Project from .Net Framework to .Net Core 3.0.
-- As of this date, you can't view the new .Net Core WinForms Designer. Hopefully, Microsoft will fixed it.
+- As of this date, you can't view the new [.Net Core WinForms Designer](https://developercommunity.visualstudio.com/content/problem/842375/windows-forms-designer-net-core-is-not-showing-aft.html). Hopefully, Microsoft will fixed it.
 
 ## Source
 
