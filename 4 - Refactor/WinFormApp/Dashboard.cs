@@ -29,7 +29,6 @@ namespace WinFormApp
                 LastName = lastNameText.Text
             };
 
-
             dataAccessLayer.CreateUser(user);
             firstNameText.Text = "";
             lastNameText.Text = "";
@@ -47,7 +46,6 @@ namespace WinFormApp
             };
 
             PrintData(true, p);
-
         }
 
         public void PrintData(bool IsFilter = false, object data = null)

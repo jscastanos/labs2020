@@ -21,8 +21,6 @@ namespace _1___Foreach
                 new Person("Jinbe", "Helmsman", 438_000_000, "Knight of the Sea")
             };
 
-
-
             Console.WriteLine("Full Name - Profession - Ephithet - Bounty (Model Properties) \n" +
                               "===================================================");
 
@@ -31,6 +29,5 @@ namespace _1___Foreach
 
             Console.ReadLine();
         }
-
     }
 }

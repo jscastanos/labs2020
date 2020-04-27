@@ -15,7 +15,6 @@ namespace _5___Config_File.Model
             this.Key = key;
         }
 
-
         public static string CheckCommand(List<Command> commands, string commandQuestion)
         {
             bool IsCommandValid = false;
@@ -50,5 +49,4 @@ namespace _5___Config_File.Model
             Console.WriteLine("");
         }
     }
-
 }

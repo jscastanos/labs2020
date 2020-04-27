@@ -137,7 +137,6 @@ namespace _5___Config_File
                             break;
                         }
 
-
                     if (!DidExist)
                     {
                         config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings

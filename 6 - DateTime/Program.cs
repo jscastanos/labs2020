@@ -93,7 +93,6 @@ namespace _6___DateTime
                             splitTime[0] += 12;
 
                         DisplayTimeDifference(splitTime);
-
                     }
                     else goto default;
                     break;
