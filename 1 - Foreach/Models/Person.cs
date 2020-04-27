@@ -1,6 +1,6 @@
 ﻿namespace _1___Foreach.Models
 {
-    class Person
+    internal class Person
     {
         public string FullName { get; set; }
         public string Profession { get; set; }

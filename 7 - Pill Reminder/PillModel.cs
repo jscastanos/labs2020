@@ -12,7 +12,7 @@ namespace PillReminderUI
         {
             get
             {
-                return $"{ PillName } at { TimeToTake.ToString("h:mm tt") }";
+                return $"{ PillName } at { TimeToTake:h:mm tt}";
             }
         }
     }

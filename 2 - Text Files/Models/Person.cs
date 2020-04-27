@@ -2,7 +2,7 @@
 
 namespace _2___Text_Files.Models
 {
-    class Person
+    internal class Person
     {
         [Index(0)]
         public string FirstName { get; set; }

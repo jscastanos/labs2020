@@ -5,9 +5,9 @@ using Zeck.Common;
 
 namespace _6___DateTime
 {
-    class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             string[] options = new string[3] { "Date", "Time", "Exit" };
 
@@ -20,16 +20,18 @@ namespace _6___DateTime
                     case 1:
                         CalculateDate();
                         break;
+
                     case 2:
                         CalculateTime();
                         break;
+
                     case 3:
                         return;
                 }
             }
         }
 
-        static void CalculateDate()
+        private static void CalculateDate()
         {
             Regex dateRX = new Regex(@"^(\d{1,2})-(\d{1,2})-(\d{1,4})$");
 
@@ -65,7 +67,7 @@ namespace _6___DateTime
             else Console.WriteLine("Invalid Date\n");
         }
 
-        static void CalculateTime()
+        private static void CalculateTime()
         {
             Regex timeRx1 = new Regex(@"^(\d{1,2}):(\d{1,2}) ([aApP][mM])$");
             Regex timeRx2 = new Regex(@"^(\d{1,2}):(\d{1,2})$");
@@ -73,6 +75,7 @@ namespace _6___DateTime
             string[] formats = new string[2] { "12 hr AM/PM", "24 hr" };
             int formatIndex = SelectOptions(formats, "Select Time Format");
             string timeStr;
+            bool isTimeValid = true;
 
             timeStr = UserInput.Get($"\nEnter a ({formats[formatIndex - 1]}) time");
 
@@ -92,7 +95,8 @@ namespace _6___DateTime
 
                         DisplayTimeDifference(splitTime);
                     }
-                    else goto default;
+                    else
+                        isTimeValid = !isTimeValid;
                     break;
 
                 case 2 when timeRx2.IsMatch(timeStr):
@@ -100,21 +104,25 @@ namespace _6___DateTime
 
                     if (splitTime[0] <= 24)
                         DisplayTimeDifference(splitTime);
-                    else goto default;
+                    else
+                        isTimeValid = !isTimeValid;
                     break;
 
                 default:
-                    Console.WriteLine("Invalid Time\n");
+                    isTimeValid = !isTimeValid;
                     break;
             }
+
+            if (!isTimeValid)
+                Console.WriteLine("Invalid Time\n");
         }
 
-        static int[] SplitTime(string time, char separator)
+        private static int[] SplitTime(string time, char separator)
         {
             return time.Split(separator).Select(Int32.Parse).ToArray();
         }
 
-        static void DisplayTimeDifference(int[] time)
+        private static void DisplayTimeDifference(int[] time)
         {
             try
             {
@@ -129,7 +137,7 @@ namespace _6___DateTime
             }
         }
 
-        static int SelectOptions(string[] options, string message)
+        private static int SelectOptions(string[] options, string message)
         {
             while (true)
             {

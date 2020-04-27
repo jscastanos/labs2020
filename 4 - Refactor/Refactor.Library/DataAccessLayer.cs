@@ -11,7 +11,7 @@ namespace Refactor.Library
     {
         public static string connectionString = ConfigurationManager.ConnectionStrings["DapperDemoDB"].ConnectionString;
 
-        readonly IDbConnection cnn = new SqlConnection(connectionString);
+        private readonly IDbConnection cnn = new SqlConnection(connectionString);
 
         public List<UserModel> GetUser()
         {

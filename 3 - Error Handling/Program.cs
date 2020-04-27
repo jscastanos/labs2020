@@ -3,9 +3,9 @@ using System;
 
 namespace _3___Error_Handling
 {
-    class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             PaymentProcessor paymentProcessor = new PaymentProcessor();
 
@@ -18,7 +18,10 @@ namespace _3___Error_Handling
                     if (result != null)
                         Console.WriteLine(result.TransactionAmount);
                     else
-                        throw new NullReferenceException($"Null value for item {i}");
+                    {
+                        NullReferenceException nullReferenceException = new NullReferenceException($"Null value for item {i}");
+                        throw nullReferenceException;
+                    }
                 }
                 catch (NullReferenceException ex)
                 {

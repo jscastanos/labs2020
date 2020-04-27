@@ -8,8 +8,8 @@ namespace WinFormApp
 {
     public partial class Dashboard : Form
     {
-        public static DataAccessLayer dataAccessLayer = new DataAccessLayer();
-        readonly BindingList<UserModel> users = new BindingList<UserModel>();
+        public readonly DataAccessLayer dataAccessLayer = new DataAccessLayer();
+        private readonly BindingList<UserModel> users = new BindingList<UserModel>();
 
         public Dashboard()
         {

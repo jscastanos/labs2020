@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace _1___Foreach
 {
-    class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             List<Person> names = new List<Person> {
                 new Person("Monkey D. Luffy", "Captian", 1_500_000_000, "Straw Hat"),

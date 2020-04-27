@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,8 +8,8 @@ namespace PillReminderUI
 {
     public partial class ReminderWindow : Form
     {
-        readonly BindingList<PillModel> medications = new BindingList<PillModel>();
-        BindingList<PillModel> pillsToTake = new BindingList<PillModel>();
+        private readonly BindingList<PillModel> medications = new BindingList<PillModel>();
+        private BindingList<PillModel> pillsToTake = new BindingList<PillModel>();
 
         public ReminderWindow()
         {
@@ -40,7 +39,7 @@ namespace PillReminderUI
                     temp.Add(medication);
             }
 
-            if (temp.Count() != pillsToTake.Count())
+            if (temp.Count != pillsToTake.Count)
             {
                 pillsToTake = new BindingList<PillModel>(temp);
                 pillsToTakeListBox.DataSource = pillsToTake.OrderBy(o => o.TimeToTake).ToList();

@@ -4,11 +4,11 @@ using Zeck.Common;
 
 namespace ConsoleApp
 {
-    class Program
+    internal class Program
     {
         public static DataAccessLayer dataAccess = new DataAccessLayer();
 
-        static void Main()
+        private static void Main()
         {
             string actionToTake = "";
 
@@ -35,6 +35,7 @@ namespace ConsoleApp
                         dataAccess.CreateUser(user);
                         Console.WriteLine();
                         break;
+
                     default:
                         break;
                 }

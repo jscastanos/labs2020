@@ -6,33 +6,30 @@ using Zeck.Common;
 
 namespace _5___Config_File
 {
-    class Program
+    internal static class Program
     {
-        public static string userCommand;
-        public static List<Command> appCommands = new List<Command>();
-        public static List<Command> mainCommands = new List<Command>();
-        public static bool DidInitialize = false;
-        public static Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-        static void Main()
+        public static readonly List<Command> appCommands = new List<Command>()
         {
-            //init commands
-            if (!DidInitialize)
-            {
-                mainCommands.Add(new Command("App Settings", "!a"));
-                mainCommands.Add(new Command("Connection Strings", "!c"));
-                appCommands.Add(new Command("Add New", "!a"));
-                appCommands.Add(new Command("Print", "!p"));
-                appCommands.Add(new Command("Return", "!r"));
-                DidInitialize = true;
-            }
+                new Command("Add New", "!a"),
+                new Command("Print", "!p"),
+                new Command("Return", "!r")
+        };
 
+        public static readonly List<Command> mainCommands = new List<Command>()
+        {
+                new Command("App Settings", "!a"),
+                new Command("Connection Strings", "!c")
+        };
+
+        public static readonly Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+        private static void Main()
+        {
             Console.WriteLine("Config File Challenge.");
             Command.DisplayCommand(mainCommands);
-            userCommand = Command.CheckCommand(mainCommands, "Choose");
 
             //execute
-            switch (userCommand)
+            switch (Command.CheckCommand(mainCommands, "Choose"))
             {
                 case "!a":
                     AppSettings();
@@ -50,14 +47,13 @@ namespace _5___Config_File
             Console.ReadLine();
         }
 
-        static void AppSettings()
+        private static void AppSettings()
         {
             Command.DisplayCommand(appCommands);
-            userCommand = Command.CheckCommand(appCommands, "Select Mode");
 
             var appSettings = ConfigurationManager.AppSettings;
 
-            switch (userCommand)
+            switch (Command.CheckCommand(appCommands, "Select Mode"))
             {
                 case "!a":
                     bool DidExist = false;
@@ -102,14 +98,13 @@ namespace _5___Config_File
             AppSettings();
         }
 
-        static void ConnectionSettings()
+        private static void ConnectionSettings()
         {
             Command.DisplayCommand(appCommands);
-            userCommand = Command.CheckCommand(appCommands, "Select Mode");
 
             ConnectionStringSettingsCollection connectionSettings = ConfigurationManager.ConnectionStrings;
 
-            switch (userCommand)
+            switch (Command.CheckCommand(appCommands, "Select Mode"))
             {
                 case "!a":
                     bool DidExist = false;
