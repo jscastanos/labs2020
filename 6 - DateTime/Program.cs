@@ -6,7 +6,6 @@ namespace _6___DateTime
 {
     class Program
     {
-
         static void Main()
         {
             string[] options = new string[3] { "Date", "Time", "Exit" };
@@ -65,10 +64,7 @@ namespace _6___DateTime
                 }
             }
             else Console.WriteLine("Invalid Date\n");
-
-
         }
-
 
         static void CalculateTime()
         {
@@ -113,9 +109,7 @@ namespace _6___DateTime
                 default:
                     Console.WriteLine("Invalid Time\n");
                     break;
-
             }
-
         }
 
         static int[] SplitTime(string time, char separator)
@@ -142,7 +136,6 @@ namespace _6___DateTime
         {
             while (true)
             {
-
                 for (var index = 0; index < options.Length; index++)
                     Console.WriteLine($"[{index + 1}] - {options[index]}");
 
@@ -161,8 +154,6 @@ namespace _6___DateTime
                 {
                     Console.WriteLine($"Invalid Command: {ex.Message}\n");
                 }
-
-
             }
         }
     }

@@ -39,9 +39,6 @@ namespace ConsoleApp
                     default:
                         break;
                 }
-
-
-
             } while (actionToTake.ToLower() != "quit");
         }
 

@@ -180,6 +180,5 @@ namespace _5___Config_File
             Console.WriteLine();
             ConnectionSettings();
         }
-
     }
 }
