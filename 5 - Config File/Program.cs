@@ -1,4 +1,5 @@
 ﻿using _5___Config_File.Model;
+using Zeck.Common;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -29,7 +30,7 @@ namespace _5___Config_File
 
             Console.WriteLine("Config File Challenge.");
             Command.DisplayCommand(mainCommands);
-            userCommand = Command.CheckCommand(mainCommands, "Choose: ");
+            userCommand = Command.CheckCommand(mainCommands, "Choose");
 
             //execute
             switch (userCommand)
@@ -52,26 +53,24 @@ namespace _5___Config_File
 
         static void AppSettings()
         {
-            string[] newSettings = new string[2];
-
             Command.DisplayCommand(appCommands);
-            userCommand = Command.CheckCommand(appCommands, "Select Mode: ");
+            userCommand = Command.CheckCommand(appCommands, "Select Mode");
 
-            NameValueCollection appSettings = ConfigurationManager.AppSettings;
+            var appSettings = ConfigurationManager.AppSettings;
 
             switch (userCommand)
             {
                 case "!a":
                     bool DidExist = false;
 
-                    Console.Write("Setting Name: ");
-                    newSettings[0] = Console.ReadLine();
-
-                    Console.Write("Setting Value: ");
-                    newSettings[1] = Console.ReadLine();
+                    var newSetting = new
+                    {
+                        key = UserInput.Get("Setting Name"),
+                        value = UserInput.Get("Setting Value")
+                    };
 
                     foreach (string key in appSettings.AllKeys)
-                        if (key == newSettings[0] && appSettings[key] == newSettings[1])
+                        if (key == newSetting.key && appSettings[key] == newSetting.value)
                         {
                             DidExist = true;
                             break;
@@ -79,10 +78,8 @@ namespace _5___Config_File
 
                     if (!DidExist)
                     {
-                        config.AppSettings.Settings.Add(newSettings[0], newSettings[1]);
-                        config.Save(ConfigurationSaveMode.Modified);
-                        ConfigurationManager.RefreshSection("appSettings");
-                        Console.WriteLine("\nSuccessfully Added new AppSettings");
+                        config.AppSettings.Settings.Add(newSetting.key, newSetting.value);
+                        UpdateConfiguration("appSettings", "Successfully Added new AppSettings");
                     }
                     else
                         Console.WriteLine("\nCan't Add, AppSetting already exist");
@@ -95,7 +92,6 @@ namespace _5___Config_File
                             Console.WriteLine($"- {key} : { appSettings[key] }");
                     else
                         Console.WriteLine("App doesn't have settings.");
-
                     Console.WriteLine("======================================================================");
                     break;
 
@@ -109,10 +105,8 @@ namespace _5___Config_File
 
         static void ConnectionSettings()
         {
-            string[] newSettings = new string[3];
-
             Command.DisplayCommand(appCommands);
-            userCommand = Command.CheckCommand(appCommands, "Select Mode: ");
+            userCommand = Command.CheckCommand(appCommands, "Select Mode");
 
             ConnectionStringSettingsCollection connectionSettings = ConfigurationManager.ConnectionStrings;
 
@@ -121,17 +115,15 @@ namespace _5___Config_File
                 case "!a":
                     bool DidExist = false;
 
-                    Console.Write("Connection Name: ");
-                    newSettings[0] = Console.ReadLine();
-
-                    Console.Write("Connection String: ");
-                    newSettings[1] = Console.ReadLine();
-
-                    Console.Write("Connection Provider: ");
-                    newSettings[2] = Console.ReadLine();
+                    ConnectionStringSettings newConnection = new ConnectionStringSettings()
+                    {
+                        Name = UserInput.Get("Connection Name"),
+                        ConnectionString = UserInput.Get("Connection String"),
+                        ProviderName = UserInput.Get("Connection Provider")
+                    };
 
                     foreach (ConnectionStringSettings key in connectionSettings)
-                        if (key.Name == newSettings[0] && key.ConnectionString == newSettings[1] && key.ProviderName == newSettings[2])
+                        if (key.Equals(newConnection))
                         {
                             DidExist = true;
                             break;
@@ -139,16 +131,8 @@ namespace _5___Config_File
 
                     if (!DidExist)
                     {
-                        config.ConnectionStrings.ConnectionStrings.Add(new ConnectionStringSettings
-                        {
-                            Name = newSettings[0],
-                            ConnectionString = newSettings[1],
-                            ProviderName = newSettings[2]
-                        });
-
-                        config.Save(ConfigurationSaveMode.Modified);
-                        ConfigurationManager.RefreshSection("configSections");
-                        Console.WriteLine("Successfully Added new Connection");
+                        config.ConnectionStrings.ConnectionStrings.Add(newConnection);
+                        UpdateConfiguration("configSections", "Successfully Added new Connection");
                     }
                     else
                         Console.WriteLine("Connection already exist");
@@ -159,12 +143,10 @@ namespace _5___Config_File
                     Console.WriteLine("======================================================================");
                     if (connectionSettings.Count > 0)
                         foreach (ConnectionStringSettings key in connectionSettings)
-                            Console.WriteLine($"- {key.Name} : {key.ConnectionString}");
+                            Console.WriteLine($"- {key.Name} : {key.ConnectionString} - {key.ProviderName}");
                     else
                         Console.WriteLine("App is not connected to any server");
-
                     Console.WriteLine("======================================================================");
-
                     break;
 
                 case "!r":
@@ -173,6 +155,13 @@ namespace _5___Config_File
             }
             Console.WriteLine();
             ConnectionSettings();
+        }
+
+        public static void UpdateConfiguration(string sectionName, string message)
+        {
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection(sectionName);
+            Console.WriteLine($"\n{message}");
         }
     }
 }

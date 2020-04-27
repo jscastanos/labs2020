@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Zeck.Common;
+using System;
 using System.Collections.Generic;
 
 namespace _5___Config_File.Model
@@ -21,9 +22,7 @@ namespace _5___Config_File.Model
 
             while (true)
             {
-                Console.Write(commandQuestion);
-
-                userCommand = Console.ReadLine();
+                userCommand = UserInput.Get(commandQuestion);
                 Console.WriteLine();
 
                 foreach (var command in commands)

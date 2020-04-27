@@ -16,13 +16,9 @@ namespace _3___Error_Handling
                     var result = paymentProcessor.MakePayment($"Demo{ i }", i);
 
                     if (result != null)
-                    {
                         Console.WriteLine(result.TransactionAmount);
-                    }
                     else
-                    {
                         throw new NullReferenceException($"Null value for item {i}");
-                    }
                 }
                 catch (NullReferenceException ex)
                 {

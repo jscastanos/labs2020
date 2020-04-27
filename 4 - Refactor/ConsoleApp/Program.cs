@@ -1,5 +1,6 @@
 ﻿using Refactor.Library;
 using System;
+using Zeck.Common;
 
 namespace ConsoleApp
 {
@@ -13,7 +14,7 @@ namespace ConsoleApp
 
             do
             {
-                actionToTake = GetUserInput("What action do you want to take (Display, Add, or Quit): ");
+                actionToTake = UserInput.Get("What action do you want to take (Display, Add, or Quit): ");
 
                 switch (actionToTake.ToLower())
                 {
@@ -27,8 +28,8 @@ namespace ConsoleApp
                     case "add":
                         var user = new
                         {
-                            FirstName = GetUserInput("What is the first name: "),
-                            LastName = GetUserInput("What is the last name: ")
+                            FirstName = UserInput.Get("What is the first name: "),
+                            LastName = UserInput.Get("What is the last name: ")
                         };
 
                         dataAccess.CreateUser(user);
@@ -38,12 +39,6 @@ namespace ConsoleApp
                         break;
                 }
             } while (actionToTake.ToLower() != "quit");
-        }
-
-        static string GetUserInput(string message)
-        {
-            Console.WriteLine(message);
-            return Console.ReadLine();
         }
     }
 }

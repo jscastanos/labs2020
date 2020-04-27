@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Zeck.Common;
 
 namespace _6___DateTime
 {
@@ -14,7 +15,7 @@ namespace _6___DateTime
 
             while (true)
             {
-                switch (SelectOptions(options, "Please Select: "))
+                switch (SelectOptions(options, "\nPlease Select"))
                 {
                     case 1:
                         CalculateDate();
@@ -33,13 +34,11 @@ namespace _6___DateTime
             Regex dateRX = new Regex(@"^(\d{1,2})-(\d{1,2})-(\d{1,4})$");
 
             string[] format = new string[2] { "MM-dd-yyyy", "dd-MM-yyyy" };
-            int formatIndex = SelectOptions(format, "Select Date Format: ");
+            int formatIndex = SelectOptions(format, "Select Date Format");
             string dateStr;
 
             Console.WriteLine("Please not that the system only accepts \"-\" or dash as date separator");
-            Console.Write($"Enter Date ({format[formatIndex - 1]}): ");
-
-            dateStr = Console.ReadLine();
+            dateStr = UserInput.Get($"\nEnter Date({ format[formatIndex - 1]})");
 
             if (dateRX.IsMatch(dateStr))
             {
@@ -72,11 +71,10 @@ namespace _6___DateTime
             Regex timeRx2 = new Regex(@"^(\d{1,2}):(\d{1,2})$");
 
             string[] formats = new string[2] { "12 hr AM/PM", "24 hr" };
-            int formatIndex = SelectOptions(formats, "Select Time Format: ");
+            int formatIndex = SelectOptions(formats, "Select Time Format");
             string timeStr;
 
-            Console.Write($"Enter a ({formats[formatIndex - 1]}) time: ");
-            timeStr = Console.ReadLine();
+            timeStr = UserInput.Get($"\nEnter a ({formats[formatIndex - 1]}) time");
 
             int[] splitTime;
 
@@ -138,11 +136,9 @@ namespace _6___DateTime
                 for (var index = 0; index < options.Length; index++)
                     Console.WriteLine($"[{index + 1}] - {options[index]}");
 
-                Console.Write("\n" + message);
-
                 try
                 {
-                    int command = Convert.ToInt32(Console.ReadLine());
+                    int command = Convert.ToInt32(UserInput.Get($"\n{message}"));
 
                     if (command > 0 && command <= options.Length)
                         return command;

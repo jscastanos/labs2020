@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6 - DateTime", "6 - DateTim
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Completed", "Completed", "{3F81B654-4704-4FEF-995B-B9903E5F14A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0CD6E58F-1DD3-45E6-BAD5-7D45DFD5C162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zeck.Common", "Common\Console.Library\Zeck.Common.csproj", "{05C422CC-7AD9-49A5-B5B8-46A5B95F1164}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{2E83B762-5343-4232-8B69-167EB0962C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E83B762-5343-4232-8B69-167EB0962C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E83B762-5343-4232-8B69-167EB0962C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C422CC-7AD9-49A5-B5B8-46A5B95F1164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C422CC-7AD9-49A5-B5B8-46A5B95F1164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C422CC-7AD9-49A5-B5B8-46A5B95F1164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C422CC-7AD9-49A5-B5B8-46A5B95F1164}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,7 @@ Global
 		{2E2BDB20-8771-41EE-AEAF-62C20EA56C70} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
 		{3011E90F-580C-47EA-BA02-6D5706B4E052} = {C86C9B54-473F-4B87-A51A-2B22356DA4DD}
 		{2E83B762-5343-4232-8B69-167EB0962C3E} = {3F81B654-4704-4FEF-995B-B9903E5F14A4}
+		{05C422CC-7AD9-49A5-B5B8-46A5B95F1164} = {0CD6E58F-1DD3-45E6-BAD5-7D45DFD5C162}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE6BF077-896A-41FC-B526-2F30D5EBA574}
