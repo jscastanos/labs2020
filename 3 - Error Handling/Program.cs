@@ -23,7 +23,6 @@ namespace _3___Error_Handling
                     {
                         throw new NullReferenceException($"Null value for item {i}");
                     }
-
                 }
                 catch (NullReferenceException ex)
                 {
@@ -39,16 +38,11 @@ namespace _3___Error_Handling
                 }
                 catch (Exception ex)
                 {
-
                     Console.WriteLine($"Payment skipped for payment with { i } items  {(ex.InnerException != null ? ex.InnerException.Message : "")}");
                 }
-
             }
 
-
             Console.ReadLine();
-
         }
-
     }
 }

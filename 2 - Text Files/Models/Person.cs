@@ -31,6 +31,5 @@ namespace _2___Text_Files.Models
                 return $"{FirstName} {LastName} is {Age} and is {(IsAlive ? "alive" : "dead")}";
             }
         }
-
     }
 }

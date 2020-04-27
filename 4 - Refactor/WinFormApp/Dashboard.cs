@@ -39,7 +39,6 @@ namespace WinFormApp
 
         private void ApplyFilterButton_Click(object sender, EventArgs e)
         {
-
             var p = new
             {
                 Filter = filterUsersText.Text

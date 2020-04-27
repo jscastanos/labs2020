@@ -21,7 +21,6 @@ namespace Refactor.Library
             return cnn.Query<UserModel>("spSystemUser_Get", commandType: CommandType.StoredProcedure).ToList();
         }
 
-
         public void CreateUser(object user)
         {
             cnn.Execute("dbo.spSystemUser_Create", user, commandType: CommandType.StoredProcedure);

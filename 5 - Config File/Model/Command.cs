@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace _5___Config_File.Model
 {
-
     public class Command
     {
         public string Name { get; set; }
