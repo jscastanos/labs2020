@@ -7,7 +7,7 @@
  
  ## Output
  
- ![Output](./output.jpg)
+ ![Output](./output.JPG)
  
  ## Note
  
