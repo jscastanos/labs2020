@@ -9,9 +9,8 @@ namespace Refactor.Library
 {
     public class DataAccessLayer
     {
-        public static string connectionString = ConfigurationManager.ConnectionStrings["DapperDemoDB"].ConnectionString;
-
-        private readonly IDbConnection cnn = new SqlConnection(connectionString);
+        public static string ConnectionString { get; set; } = ConfigurationManager.ConnectionStrings["DapperDemoDB"].ConnectionString;
+        private readonly IDbConnection cnn = new SqlConnection(ConnectionString);
 
         public List<UserModel> GetUser()
         {

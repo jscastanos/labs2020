@@ -4,9 +4,9 @@ using Zeck.Common;
 
 namespace ConsoleApp
 {
-    internal class Program
+    internal static class Program
     {
-        public static DataAccessLayer dataAccess = new DataAccessLayer();
+        public static readonly DataAccessLayer dataAccess = new DataAccessLayer();
 
         private static void Main()
         {

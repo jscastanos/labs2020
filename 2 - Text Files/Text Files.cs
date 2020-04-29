@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace _2___Text_Files
 {
-    public partial class frmTextFile : Form
+    public partial class FrmTextFile : Form
     {
         private readonly List<Person> tempPersons = new List<Person>();
         private readonly string csvPath = @".\Data\users.csv";
         private int currentDataCount = 0;
 
-        public frmTextFile()
+        public FrmTextFile()
         {
             InitializeComponent();
         }

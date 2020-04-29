@@ -1,6 +1,6 @@
 ﻿namespace _2___Text_Files
 {
-    partial class frmTextFile
+    partial class FrmTextFile
     {
         /// <summary>
         /// Required designer variable.
@@ -175,7 +175,7 @@
             this.Controls.Add(this.txtFname);
             this.Controls.Add(this.lblFname);
             this.Controls.Add(this.lblHeader);
-            this.Name = "frmTextFile";
+            this.Name = "FrmTextFile";
             this.Text = "Text_Files";
             this.Load += new System.EventHandler(this.FrmTextFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).EndInit();

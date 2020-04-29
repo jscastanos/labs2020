@@ -13,7 +13,7 @@ namespace _2___Text_Files
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTextFile());
+            Application.Run(new FrmTextFile());
         }
     }
 }
