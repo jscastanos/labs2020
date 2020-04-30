@@ -2,9 +2,10 @@
 
 # TweetBookAPI
 
-A Demo RESTful API project created using .Net Core technology.
 ![CodeFactor](https://img.shields.io/codefactor/grade/github/jscastanos/TweetBookAPI)
 ![Size](https://img.shields.io/github/repo-size/jscastanos/TweetbookAPI)
+
+A Demo RESTful API project created using .Net Core technology.
 
 ## Technologies used:
 
