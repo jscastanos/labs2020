@@ -18,7 +18,7 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 6. [DateTime](./6%20-%20DateTime) ✅
 7. [Pill Reminder](./7%20-%20Pill%20Reminder) ✅
 8. Web Deployment (skipped)
-9. Database Design
+9. [Database Design](./9%20-%20Database%20Design) ✅
 10. Performance Evaluation
 11. FizzBuzz
 12. Palindrome
