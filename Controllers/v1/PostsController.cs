@@ -11,11 +11,11 @@ using TweetBook.Services;
 
 namespace TweetBook.Controllers
 {
-    public class PostController : Controller
+    public class PostsController : Controller
     {
         private readonly IPostService _postService;
 
-        public PostController(IPostService postService)
+        public PostsController(IPostService postService)
         {
             _postService = postService;
         }
@@ -35,6 +35,23 @@ namespace TweetBook.Controllers
                 return NotFound();
 
             return Ok(post);
+        }
+
+        [HttpPut(ApiRoutes.Posts.Update)]
+        public IActionResult Update([FromRoute] Guid postId, [FromBody] UpdatePostRequest request)
+        {
+            var post = new Post
+            {
+                Id = postId,
+                Name = request.Name
+            };
+
+            var updated = _postService.UpdatePost(post);
+
+            if (updated)
+                return Ok(post);
+
+            return NotFound();
         }
 
         [HttpPost(ApiRoutes.Posts.Create)]
