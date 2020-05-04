@@ -7,6 +7,6 @@ namespace TweetBook.Contracts.v1.Request
 {
     public class CreatePostRequest
     {
-        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }
