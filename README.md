@@ -11,6 +11,7 @@ A Demo RESTful API project created using .Net Core technology.
 
 - [.Net Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 - [Swashbuckle 5.4](https://www.nuget.org/packages/Swashbuckle/5.4.0)
+- [JWT](https://jwt.io/)
 
 ## Sources
 
