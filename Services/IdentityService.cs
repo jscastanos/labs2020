@@ -22,22 +22,21 @@ namespace TweetBook.Services
             _jwtSettings = jwtSettings;
         }
 
-        public async Task<AuthenticationResult> Register(string email, string password)
+        public async Task<AuthenticationResult> Register(string userName, string password)
         {
-            var existingUser = await _userManager.FindByEmailAsync(email);
+            var existingUser = await _userManager.FindByNameAsync(userName);
 
             if (existingUser != null)
             {
                 return new AuthenticationResult
                 {
-                    Errors = new[] { "User with this email has already exist" }
+                    Errors = new[] { "User with this username has already exist" }
                 };
             }
 
             var newUser = new IdentityUser
             {
-                Email = email,
-                UserName = email
+                UserName = userName
             };
 
             var createdUser = await _userManager.CreateAsync(newUser, password);
@@ -56,9 +55,9 @@ namespace TweetBook.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, newUser.Email),
+                    new Claim(JwtRegisteredClaimNames.Sub, newUser.UserName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, newUser.Email),
+                    new Claim(ClaimTypes.NameIdentifier, newUser.UserName),
                     new Claim("id", newUser.Id)
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
@@ -74,5 +73,4 @@ namespace TweetBook.Services
             };
         }
     }
-
 }

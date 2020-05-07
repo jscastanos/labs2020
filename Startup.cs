@@ -51,7 +51,6 @@ namespace TweetBook
                 option.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
             });
 
-
             app.UseMvc();
         }
     }

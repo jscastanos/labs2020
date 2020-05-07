@@ -22,7 +22,7 @@ namespace TweetBook.Controllers.v1
         [HttpPost(ApiRoutes.Identity.Register)]
         public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
         {
-            var authResponse = await _identityService.Register(request.Email, request.Password);
+            var authResponse = await _identityService.Register(request.Username, request.Password);
 
             if (!authResponse.Success)
             {

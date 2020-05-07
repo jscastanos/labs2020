@@ -7,7 +7,7 @@ namespace TweetBook.Contracts.v1.Request
 {
     public class UserRegistrationRequest
     {
-        public string Email { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
     }
 }
