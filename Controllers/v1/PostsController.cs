@@ -41,7 +41,7 @@ namespace TweetBook.Controllers
         }
 
         [HttpPut(ApiRoutes.Posts.Update)]
-        public async Task<IActionResult> Update([FromRoute] Guid postId, [FromBody] UpdatePostRequest request)
+        public async Task<IActionResult> Update([FromRoute] Guid postId, [FromBody] PostRequest.Update request)
         {
             var post = new Post
             {
@@ -69,7 +69,7 @@ namespace TweetBook.Controllers
         }
 
         [HttpPost(ApiRoutes.Posts.Create)]
-        public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
+        public async Task<IActionResult> Create([FromBody] PostRequest.Create postRequest)
         {
             var post = new Post { Name = postRequest.Name };
 
@@ -78,7 +78,7 @@ namespace TweetBook.Controllers
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}", post.Id.ToString());
 
-            var reponse = new PostResponse { Id = post.Id };
+            var reponse = new PostResponse.CreateSuccess { Id = post.Id };
 
             return Created(locationUri, reponse);
         }

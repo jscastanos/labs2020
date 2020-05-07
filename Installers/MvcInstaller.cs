@@ -21,8 +21,6 @@ namespace TweetBook.Installers
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-
-
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "Tweetbok API", Version = "v1" });

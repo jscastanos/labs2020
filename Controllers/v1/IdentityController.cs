@@ -20,19 +20,48 @@ namespace TweetBook.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.Identity.Register)]
-        public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
+        public async Task<IActionResult> Register([FromBody] IdentityRequest.UserRegistration request)
         {
-            var authResponse = await _identityService.Register(request.Username, request.Password);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new IdentityResponse.AuthFailed
+                {
+
+                    Errors = ModelState.Values.SelectMany(err => err.Errors.Select(errMsg => errMsg.ErrorMessage))
+                });
+            }
+
+            var authResponse = await _identityService.RegisterAsync(request.Email, request.Password);
 
             if (!authResponse.Success)
             {
-                return BadRequest(new AuthFailedResponse
+                return BadRequest(new IdentityResponse.AuthFailed
                 {
                     Errors = authResponse.Errors
                 });
             }
 
-            return Ok(new AuthSuccessResponse
+            return Ok(new IdentityResponse.AuthSuccess
+            {
+                Token = authResponse.Token
+            });
+        }
+
+        [HttpPost(ApiRoutes.Identity.Login)]
+        public async Task<IActionResult> Login([FromBody] IdentityRequest.UserLogin request)
+        {
+            var authResponse = await _identityService.LoginAsync(request.Email, request.Password);
+
+            if (!authResponse.Success)
+            {
+                return BadRequest(new IdentityResponse.AuthFailed
+                {
+                    Errors = authResponse.Errors
+                });
+            }
+
+            return Ok(new IdentityResponse.AuthSuccess
             {
                 Token = authResponse.Token
             });
