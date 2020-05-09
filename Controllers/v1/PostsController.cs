@@ -9,6 +9,7 @@ using TweetBook.Contracts;
 using TweetBook.Contracts.v1.Request;
 using TweetBook.Contracts.v1.Response;
 using TweetBook.Domain;
+using TweetBook.Extensions;
 using TweetBook.Services;
 
 namespace TweetBook.Controllers
@@ -43,11 +44,18 @@ namespace TweetBook.Controllers
         [HttpPut(ApiRoutes.Posts.Update)]
         public async Task<IActionResult> Update([FromRoute] Guid postId, [FromBody] PostRequest.Update request)
         {
-            var post = new Post
+            var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOwnsPost)
             {
-                Id = postId,
-                Name = request.Name
-            };
+                return BadRequest(new
+                {
+                    error = "You do not own this post"
+                });
+            }
+
+            var post = await _postService.GetPostByIdAsync(postId);
+            post.Name = request.Name;
 
             var updated = await _postService.UpdatePostAsync(post);
 
@@ -60,6 +68,16 @@ namespace TweetBook.Controllers
         [HttpDelete(ApiRoutes.Posts.Delete)]
         public async Task<IActionResult> Delete([FromRoute] Guid postId)
         {
+            var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOwnsPost)
+            {
+                return BadRequest(new
+                {
+                    error = "You do not own this post"
+                });
+            }
+
             var deleted = await _postService.DeletePostAsync(postId);
 
             if (deleted)
@@ -71,7 +89,11 @@ namespace TweetBook.Controllers
         [HttpPost(ApiRoutes.Posts.Create)]
         public async Task<IActionResult> Create([FromBody] PostRequest.Create postRequest)
         {
-            var post = new Post { Name = postRequest.Name };
+            var post = new Post
+            {
+                Name = postRequest.Name,
+                UserId = HttpContext.GetUserId()
+            };
 
             await _postService.CreatePostAsync(post);
 
@@ -82,5 +104,6 @@ namespace TweetBook.Controllers
 
             return Created(locationUri, reponse);
         }
+
     }
 }

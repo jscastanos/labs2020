@@ -22,12 +22,10 @@ namespace TweetBook.Controllers.v1
         [HttpPost(ApiRoutes.Identity.Register)]
         public async Task<IActionResult> Register([FromBody] IdentityRequest.UserRegistration request)
         {
-
             if (!ModelState.IsValid)
             {
                 return BadRequest(new IdentityResponse.AuthFailed
                 {
-
                     Errors = ModelState.Values.SelectMany(err => err.Errors.Select(errMsg => errMsg.ErrorMessage))
                 });
             }

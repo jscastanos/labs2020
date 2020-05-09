@@ -15,6 +15,7 @@ namespace TweetBook.Services
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly JwtSettings _jwtSettings;
+
         public IdentityService(UserManager<IdentityUser> userManager, JwtSettings jwtSettings)
         {
             _userManager = userManager;
