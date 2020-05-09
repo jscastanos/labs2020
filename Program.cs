@@ -27,7 +27,6 @@ namespace TweetBook
             }
 
             await host.RunAsync();
-
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
