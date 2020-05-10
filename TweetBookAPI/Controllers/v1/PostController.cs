@@ -1,0 +1,98 @@
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
+using TweetBookAPI.Contracts.v1;
+using TweetBookAPI.Contracts.v1.Requests;
+using TweetBookAPI.Contracts.v1.Responses;
+using TweetBookAPI.Domain;
+using TweetBookAPI.Extensions;
+using TweetBookAPI.Services;
+
+namespace TweetBookAPI.Controllers.v1
+{
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    public class PostController : Controller
+    {
+        private readonly IPostService _postService;
+
+        public PostController(IPostService postService)
+        {
+            _postService = postService;
+        }
+
+        [HttpGet(ApiRoutes.Post.GetAll)]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _postService.GetPostsAsync());
+        }
+
+        [HttpGet(ApiRoutes.Post.Get)]
+        public async Task<IActionResult> Get([FromRoute] Guid postId)
+        {
+            var post = await _postService.GetPostByIdAsync(postId);
+
+            if (post == null)
+                return NotFound();
+
+            return Ok(post);
+        }
+
+        [HttpPost(ApiRoutes.Post.Create)]
+        public async Task<IActionResult> Create([FromBody] PostRequest.CreatePost request)
+        {
+            var post = new Post
+            {
+                Name = request.Name,
+                UserId = HttpContext.GetUserId()
+            };
+
+            await _postService.CreatePostAsync(post);
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+            string responseUrl = $"{baseUrl}/{ApiRoutes.Post.Get.Replace("{postId}", post.Id.ToString())}";
+            var response = new PostResponse.CreateSuccess { Id = post.Id };
+
+            return Created(responseUrl, response);
+        }
+
+        [HttpPut(ApiRoutes.Post.Update)]
+        public async Task<IActionResult> Update([FromRoute] Guid postId, [FromBody] PostRequest.UpdatePost request)
+        {
+            var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOwnsPost)
+                return BadRequest(new { error = "You are not authorized to make changes in this post" });
+
+            var post = await _postService.GetPostByIdAsync(postId);
+
+            post.Name = request.Name;
+
+            var updated = await _postService.UpdatePostAsync(post);
+
+            if (updated)
+                return Ok(post);
+
+            return NotFound();
+        }
+
+        [HttpDelete(ApiRoutes.Post.Delete)]
+        public async Task<IActionResult> Delete([FromRoute] Guid postId)
+        {
+            var userOwnsPost = await _postService.UserOwnsPostAsync(postId, HttpContext.GetUserId());
+
+            if (!userOwnsPost)
+                return BadRequest(new { error = "You are not authorized to make changes in this post" });
+
+            var deleted = await _postService.DeletePostAsync(postId);
+
+            if (deleted)
+                return NoContent();
+
+            return NotFound();
+        }
+    }
+}
