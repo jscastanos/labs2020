@@ -17,8 +17,8 @@
 
         public static class Identity
         {
-            public const string Register = Base + "/register";
-            public const string Login = Base + "/login";
+            public const string Register = Base + "/auth/register";
+            public const string Login = Base + "/auth/login";
             public const string Refresh = Base + "/refresh";
         }
     }
