@@ -16,12 +16,17 @@ jobs:
       with:
         dotnet-version: 3.1.201
 
-  # dotnet restore, build and test in TweetBookAPI
-    - name: Change Directory
+  # TweetBook
+  # API
+    - name: Navigate API Project
       run: cd TweetBookAPI
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
+   
+  # Integration Test
+    - name: Navigate Test Project
+      run: cd ../TweetBook.IntegrationTests
     - name: Test
       run: dotnet test --no-restore --verbosity normal
