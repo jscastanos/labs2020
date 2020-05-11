@@ -8,15 +8,17 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2
+
+  # dotnet restore, build and test in TweetBookAPI
+    - name: Change Directory
+      run: cd TweetBookAPI
     - name: Install dependencies
       run: dotnet restore
     - name: Build
