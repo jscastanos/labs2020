@@ -26,8 +26,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
    
   # Integration Test
-    - name: Print Working Directory
-      run: pwd
+    - name: List of Directory
+      run: cd .. && ls
     - name: Navigate Test Project
       run: cd ../TweetBook.IntegrationTests
     - name: Test
