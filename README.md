@@ -4,6 +4,7 @@
 
 ![CodeFactor](https://img.shields.io/codefactor/grade/github/jscastanos/TweetBookAPI)
 ![Size](https://img.shields.io/github/repo-size/jscastanos/TweetbookAPI)
+![.NET Core](https://github.com/jscastanos/TweetBookAPI/workflows/.NET%20Core/badge.svg?branch=master)
 
 A Demo RESTful API project created using .Net Core technology.
 
