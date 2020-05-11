@@ -26,9 +26,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
    
   # Integration Test
-    - name: List of Directory
-      run: cd .. && ls
     - name: Navigate Test Project
-      run: cd ../TweetBook.IntegrationTests
+      run: cd TweetBook.IntegrationTests
     - name: Test
       run: dotnet test --no-restore --verbosity normal
