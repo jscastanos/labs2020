@@ -10,7 +10,7 @@ A Demo RESTful API project created using .Net Core technology.
 
 ## Pre-requisites
 
-1. [Visual Studio IDE](https://visualstudio.microsoft.com/vs/) Community Version or Better
+1. [Visual Studio IDE Community Version](https://visualstudio.microsoft.com/vs/) or Better
 2. [Git](https://git-scm.com/)
 3. [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (optional) or [SSDT](https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-ver15)
 
@@ -24,8 +24,8 @@ A Demo RESTful API project created using .Net Core technology.
 
 ## Technologies used:
 
-- [.Net Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-- [Swashbuckle 5.4](https://www.nuget.org/packages/Swashbuckle/5.4.0)
+- [.Net Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Swashbuckle](https://www.nuget.org/packages/Swashbuckle)
 - [JWT](https://jwt.io/)
 
 ## Sources
