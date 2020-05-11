@@ -4,7 +4,7 @@ namespace TweetBookAPI.Contracts.v1.Requests
 {
     public class IdentityRequest
     {
-        public class UserRegister
+        public class UserRegistration
         {
             [EmailAddress]
             public string Email { get; set; }

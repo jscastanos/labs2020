@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace TweetBookAPI.Installers
 {
-    internal interface IInstaller
+    public interface IInstaller
     {
         void InstallServices(IServiceCollection services, IConfiguration configuration);
     }

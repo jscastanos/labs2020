@@ -19,7 +19,7 @@ namespace TweetBookAPI.Controllers.v1
         }
 
         [HttpPost(ApiRoutes.Identity.Register)]
-        public async Task<IActionResult> Register([FromBody] IdentityRequest.UserRegister request)
+        public async Task<IActionResult> Register([FromBody] IdentityRequest.UserRegistration request)
         {
             if (!ModelState.IsValid)
             {
