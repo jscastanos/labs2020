@@ -63,7 +63,7 @@ namespace TweetBook.IntegrationTests
 
         public void Dispose()
         {
-            using var serviceScope = _serviceProvider.CreateScope();
+            var serviceScope = _serviceProvider.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<DataContext>();
             context.Database.EnsureDeleted();
         }

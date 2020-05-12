@@ -4,7 +4,7 @@ using TweetBookAPI.Services;
 
 namespace TweetBookAPI.Installers
 {
-    public class ServiceInstaller : IInstaller
+    public class ServicesInstaller : IInstaller
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {

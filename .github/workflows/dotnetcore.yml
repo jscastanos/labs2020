@@ -24,7 +24,6 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-   
   # Integration Test
     - name: Navigate Test Project
       run: cd TweetBook.IntegrationTests
