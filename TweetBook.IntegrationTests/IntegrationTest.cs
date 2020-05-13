@@ -19,20 +19,20 @@ namespace TweetBook.IntegrationTests
         protected readonly HttpClient TestClient;
         private readonly IServiceProvider _serviceProvider;
 
-        protected IntegrationTest()
+        public IntegrationTest()
         {
             var appFactory = new WebApplicationFactory<Startup>()
                 .WithWebHostBuilder(builder =>
-                {
-                    builder.ConfigureServices(services =>
-                    {
-                        services.RemoveAll(typeof(DataContext));
-                        services.AddDbContext<DataContext>(options =>
-                        {
-                            options.UseInMemoryDatabase("TestDb");
-                        });
-                    });
-                });
+                 {
+                     builder.ConfigureServices(services =>
+                     {
+                         services.RemoveAll(typeof(DataContext));
+                         services.AddDbContext<DataContext>(options =>
+                         {
+                             options.UseInMemoryDatabase("TestDb");
+                         });
+                     });
+                 });
             _serviceProvider = appFactory.Services;
             TestClient = appFactory.CreateClient();
         }
@@ -66,6 +66,8 @@ namespace TweetBook.IntegrationTests
             var serviceScope = _serviceProvider.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<DataContext>();
             context.Database.EnsureDeleted();
+            serviceScope.Dispose();
+            TestClient.Dispose();
         }
     }
 }
