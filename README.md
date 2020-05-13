@@ -6,7 +6,8 @@
 ![Size](https://img.shields.io/github/repo-size/jscastanos/TweetbookAPI)
 ![.NET Core](https://github.com/jscastanos/TweetBookAPI/workflows/.NET%20Core/badge.svg?branch=master)
 
-A Demo RESTful API project created using .Net Core technology.
+A Demo RESTful API project created using .Net Core technology. </br>
+**NOTE**: This repo is for **EXPERIMENTATION** purpose only.
 
 ## Pre-requisites
 
