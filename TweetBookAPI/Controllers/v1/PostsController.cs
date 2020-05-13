@@ -21,6 +21,7 @@ namespace TweetBookAPI.Controllers.v1
     {
         private readonly IPostService _postService;
         private readonly IMapper _mapper;
+
         public PostsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
