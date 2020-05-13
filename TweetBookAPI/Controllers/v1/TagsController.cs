@@ -11,7 +11,7 @@ using TweetBookAPI.Services;
 
 namespace TweetBookAPI.Controllers.v1
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
@@ -59,7 +59,8 @@ namespace TweetBookAPI.Controllers.v1
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
+        [Authorize(Policy = "MustWorkForZeck")]
         public async Task<IActionResult> Delete([FromRoute] string tagName)
         {
             var deleted = await _postService.DeleteTagAsync(tagName);
