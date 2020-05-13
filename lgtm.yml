@@ -1,0 +1,6 @@
+csharp:
+    index:
+      solution: 
+        - TweetBook.sln
+      dotnet:
+        version: 3.1
