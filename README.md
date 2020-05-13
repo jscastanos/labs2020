@@ -20,7 +20,8 @@ A Demo RESTful API project created using .Net Core technology. </br>
 1. Forked this repo and download a copy by running `git clone https://github.com/your_username/TweetBookAPI.git` in your terminal where `your_username` is your GitHub username.
 2. Navigate new **TweetBookAPI** directory with `cd TweetBookAPI`
 3. Run `dotnet restore` or open the project with your Visual Studio of choice.
-4. Build and Run the project
+4. Select a project (ex. `cd TweetBookAPI`)
+4. Then build and run the project using `dotnet build` and `dotnet run`, respectively
 
 
 ## Technologies used:
