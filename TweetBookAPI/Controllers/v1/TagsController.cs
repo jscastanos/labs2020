@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TweetBookAPI.Contracts.v1;
 using TweetBookAPI.Contracts.v1.Requests;
+using TweetBookAPI.Contracts.v1.Responses;
 using TweetBookAPI.Domain;
 using TweetBookAPI.Extensions;
 using TweetBookAPI.Services;
@@ -15,16 +19,19 @@ namespace TweetBookAPI.Controllers.v1
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
+        private readonly IMapper _mapper;
 
-        public TagsController(IPostService postService)
+        public TagsController(IPostService postService, IMapper mapper)
         {
             _postService = postService;
+            _mapper = mapper;
         }
 
         [HttpGet(ApiRoutes.Tags.GetAll)]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _postService.GetAllTagsAsync());
+            var tags = await _postService.GetAllTagsAsync();
+            return Ok(_mapper.Map<List<TagResponse.PostTags>>(tags));
         }
 
         [HttpGet(ApiRoutes.Tags.Get)]
@@ -35,7 +42,7 @@ namespace TweetBookAPI.Controllers.v1
             if (tag == null)
                 return NotFound();
 
-            return Ok(tag);
+            return Ok(_mapper.Map<TagResponse.PostTags>(tag));
         }
 
         [HttpPost(ApiRoutes.Tags.Create)]
@@ -55,7 +62,7 @@ namespace TweetBookAPI.Controllers.v1
             var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
             var locationUri = baseUrl + "/" + ApiRoutes.Tags.Get.Replace("{tagName}", newTag.Name);
 
-            return Created(locationUri, newTag);
+            return Created(locationUri, _mapper.Map<TagResponse.PostTags>(newTag));
         }
 
         [HttpDelete(ApiRoutes.Tags.Delete)]
