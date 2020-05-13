@@ -14,7 +14,6 @@ namespace TweetBookAPI.Authorization
         {
             var userEmailAddress = context.User?.FindFirstValue(ClaimTypes.Email) ?? string.Empty;
 
-
             if (userEmailAddress.EndsWith(requirement.DomainName))
             {
                 context.Succeed(requirement);

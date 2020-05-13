@@ -42,10 +42,10 @@ namespace TweetBook.IntegrationTests
             TestClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetJwtAsync());
         }
 
-        protected async Task<PostResponse.CreateSuccess> CreatePostAsync(PostRequest.CreatePost request)
+        protected async Task<PostResponse.Post> CreatePostAsync(PostRequest.CreatePost request)
         {
             var response = await TestClient.PostAsJsonAsync(ApiRoutes.Posts.Create, request);
-            return await response.Content.ReadAsAsync<PostResponse.CreateSuccess>();
+            return await response.Content.ReadAsAsync<PostResponse.Post>();
         }
 
         private async Task<string> GetJwtAsync()
