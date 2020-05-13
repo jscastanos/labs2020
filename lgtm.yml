@@ -1,6 +1,6 @@
-csharp:
+extraction:
+  csharp:
     index:
-      solution: 
-        - TweetBook.sln
+      all_solutions: true
       dotnet:
-        version: 3.1
+        version: 3.1.201
