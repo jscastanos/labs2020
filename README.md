@@ -21,7 +21,7 @@ A Demo RESTful API project created using .Net Core technology. </br>
 2. Navigate new **TweetBookAPI** directory with `cd TweetBookAPI`
 3. Run `dotnet restore` or open the project with your Visual Studio of choice.
 4. Select a project (ex. `cd TweetBookAPI`)
-4. Then build and run the project using `dotnet build` and `dotnet run`, respectively
+5. Then build and run the project using `dotnet build` and `dotnet run`, respectively
 
 
 ## Technologies used:
