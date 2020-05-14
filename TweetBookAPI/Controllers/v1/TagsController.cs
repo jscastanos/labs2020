@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TweetBookAPI.Contracts.v1;
@@ -27,6 +26,7 @@ namespace TweetBookAPI.Controllers.v1
             _postService = postService;
             _mapper = mapper;
         }
+
         [HttpGet(ApiRoutes.Tags.GetAll)]
         public async Task<IActionResult> GetAll()
         {
@@ -55,7 +55,6 @@ namespace TweetBookAPI.Controllers.v1
         [HttpPost(ApiRoutes.Tags.Create)]
         public async Task<IActionResult> Create([FromBody] TagRequest.CreateTag request)
         {
-
             var newTag = new Tag
             {
                 Name = request.TagName,

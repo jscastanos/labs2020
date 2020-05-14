@@ -1,8 +1,4 @@
 ﻿using Swashbuckle.AspNetCore.Filters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TweetBookAPI.Contracts.v1.Responses;
 
 namespace TweetBookAPI.Examples.Responses
