@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,6 +15,7 @@ using TweetBookAPI.Services;
 namespace TweetBookAPI.Controllers.v1
 {
     //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin,Poster")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class TagsController : Controller
     {
         private readonly IPostService _postService;
@@ -46,11 +48,11 @@ namespace TweetBookAPI.Controllers.v1
         [HttpPost(ApiRoutes.Tags.Create)]
         public async Task<IActionResult> Create([FromBody] TagRequest.CreateTag request)
         {
+
             var newTag = new Tag
             {
                 Name = request.TagName,
                 CreatorId = HttpContext.GetUserId(),
-                CreatedOn = DateTime.UtcNow
             };
 
             var created = await _postService.CreateTagAsync(newTag);

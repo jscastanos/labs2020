@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TweetBookAPI.Authorization;
+using TweetBookAPI.Filters;
 using TweetBookAPI.Options;
 
 namespace TweetBookAPI.Installers
@@ -18,7 +20,14 @@ namespace TweetBookAPI.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMvc(options => { options.EnableEndpointRouting = false; }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services
+                .AddMvc(options =>
+                {
+                    options.EnableEndpointRouting = false;
+                    options.Filters.Add<ValidationFilter>();
+                })
+                .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<Startup>())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.Configure<IdentityOptions>(options =>
             {
