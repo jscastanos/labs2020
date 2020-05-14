@@ -10,7 +10,7 @@ namespace TweetBookAPI.Contracts.v1.Responses
             public Guid Id { get; set; }
             public string Name { get; set; }
             public string UserId { get; set; }
-            public IEnumerable<TagResponse.PostTags> Tags { get; set; }
+            public IEnumerable<TagResponse.TagName> Tags { get; set; }
         }
     }
 }

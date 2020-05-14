@@ -2,7 +2,7 @@
 {
     public class TagResponse
     {
-        public class PostTags
+        public class TagName
         {
             public string Name { get; set; }
         }

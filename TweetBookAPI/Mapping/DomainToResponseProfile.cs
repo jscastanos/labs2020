@@ -11,8 +11,8 @@ namespace TweetBookAPI.Mapping
         {
             CreateMap<Post, PostResponse.Post>()
                 .ForMember(dest => dest.Tags, opt =>
-                    opt.MapFrom(src => src.Tags.Select(x => new TagResponse.PostTags { Name = x.TagName })));
-            CreateMap<Tag, TagResponse.PostTags>();
+                    opt.MapFrom(src => src.Tags.Select(x => new TagResponse.TagName { Name = x.TagName })));
+            CreateMap<Tag, TagResponse.TagName>();
         }
     }
 }
