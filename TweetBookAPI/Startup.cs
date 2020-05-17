@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
+using System.Linq;
+using TweetBook.Contracts.HealthChecks;
 using TweetBookAPI.Extensions;
 using TweetBookAPI.Options;
-using TweetBook.Contracts.HealthChecks;
-using System.Linq;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
 
 namespace TweetBookAPI
 {
