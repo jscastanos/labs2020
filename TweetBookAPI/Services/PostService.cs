@@ -17,15 +17,20 @@ namespace TweetBookAPI.Services
             _dataContext = dataContext;
         }
 
-        public async Task<List<Post>> GetPostsAsync(PaginationFilter paginationFilter = null)
+        public async Task<List<Post>> GetPostsAsync(PostFilters.GetAllPost filter = null, PaginationFilter paginationFilter = null)
         {
+            var queryable = _dataContext.Posts.AsQueryable();
+
             if (paginationFilter == null)
             {
-                return await _dataContext.Posts.Include(x => x.Tags).ToListAsync();
+                return await queryable.Include(x => x.Tags).ToListAsync();
             }
+
+            queryable = AddFiltersOnQuery(filter, queryable);
+
             var skip = (paginationFilter.PageNumber - 1) * paginationFilter.PageSize;
 
-            return await _dataContext.Posts.Include(x => x.Tags)
+            return await queryable.Include(x => x.Tags)
                 .Skip(skip).Take(paginationFilter.PageSize).ToListAsync();
         }
 
@@ -81,23 +86,6 @@ namespace TweetBookAPI.Services
             return await _dataContext.Tags.AsNoTracking().ToListAsync();
         }
 
-        private async Task AddNewTags(Post post)
-        {
-            foreach (var tag in post.Tags)
-            {
-                var existingTag = await _dataContext.Tags.SingleOrDefaultAsync(x => x.Name == tag.TagName);
-                if (existingTag != null)
-                    continue;
-
-                await _dataContext.Tags.AddAsync(new Tag
-                {
-                    Name = tag.TagName,
-                    CreatedOn = DateTime.UtcNow,
-                    CreatorId = post.UserId
-                });
-            }
-        }
-
         public async Task<bool> CreateTagAsync(Tag tag)
         {
             tag.Name = tag.Name.ToLower();
@@ -127,6 +115,36 @@ namespace TweetBookAPI.Services
             _dataContext.Tags.Remove(tag);
 
             return await _dataContext.SaveChangesAsync() > postTags.Count;
+        }
+
+        private async Task AddNewTags(Post post)
+        {
+            foreach (var tag in post.Tags)
+            {
+                var existingTag = await _dataContext.Tags.SingleOrDefaultAsync(x => x.Name == tag.TagName);
+                if (existingTag != null)
+                    continue;
+
+                await _dataContext.Tags.AddAsync(new Tag
+                {
+                    Name = tag.TagName,
+                    CreatedOn = DateTime.UtcNow,
+                    CreatorId = post.UserId
+                });
+            }
+        }
+
+        private static IQueryable<Post> AddFiltersOnQuery(PostFilters.GetAllPost filter, IQueryable<Post> queryable)
+        {
+            if (!string.IsNullOrEmpty(filter?.UserId))
+                queryable = queryable.Where(x => x.UserId == filter.UserId);
+
+            if (!string.IsNullOrEmpty(filter?.PostName))
+                queryable = queryable.Where(x => x.Name == filter.PostName);
+
+            if (!string.IsNullOrEmpty(filter?.Tags))
+                queryable = queryable.Where(x => x.Tags.Any(xx => xx.TagName == filter.Tags));
+            return queryable;
         }
     }
 }
