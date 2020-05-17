@@ -1,11 +1,12 @@
 ﻿using FluentAssertions;
-using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TweetBook.Contracts.v1.Responses;
 using TweetBookAPI.Contracts.v1;
 using TweetBookAPI.Contracts.v1.Requests;
-using TweetBookAPI.Domain;
+using TweetBookAPI.Contracts.v1.Responses;
 using Xunit;
 
 namespace TweetBook.IntegrationTests
@@ -23,7 +24,7 @@ namespace TweetBook.IntegrationTests
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-            (await response.Content.ReadAsAsync<List<Post>>()).Should().BeEmpty();
+            (await response.Content.ReadAsAsync<PagedResponse<PostResponse>>()).Data.Should().BeEmpty();
         }
 
         [Fact]
@@ -34,13 +35,14 @@ namespace TweetBook.IntegrationTests
             var createdPost = await CreatePostAsync(new PostRequest.CreatePost { Name = "Test post", Tags = new[] { "tag1" } });
 
             //Act
-            var response = await TestClient.GetAsync(ApiRoutes.Posts.Get.Replace("{postId}", createdPost.Id.ToString()));
+            var response = await TestClient.GetAsync(ApiRoutes.Posts.Get.Replace("{postId}", createdPost.Data.Id.ToString()));
 
             //Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-            var returnedPost = await response.Content.ReadAsAsync<Post>();
-            returnedPost.Id.Should().Be(createdPost.Id);
-            returnedPost.Name.Should().Be("Test post");
+            var returnedPost = await response.Content.ReadAsAsync<Response<PostResponse.Post>>();
+            returnedPost.Data.Id.Should().Be(createdPost.Data.Id);
+            returnedPost.Data.Name.Should().Be("Test post");
+            returnedPost.Data.Tags.Single().Name.Should().Be("tag1");
         }
     }
 }

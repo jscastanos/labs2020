@@ -6,6 +6,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using TweetBook.Contracts.v1.Responses;
 using TweetBookAPI;
 using TweetBookAPI.Contracts.v1;
 using TweetBookAPI.Contracts.v1.Requests;
@@ -42,10 +43,10 @@ namespace TweetBook.IntegrationTests
             TestClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetJwtAsync());
         }
 
-        protected async Task<PostResponse.Post> CreatePostAsync(PostRequest.CreatePost request)
+        protected async Task<Response<PostResponse.Post>> CreatePostAsync(PostRequest.CreatePost request)
         {
             var response = await TestClient.PostAsJsonAsync(ApiRoutes.Posts.Create, request);
-            return await response.Content.ReadAsAsync<PostResponse.Post>();
+            return await response.Content.ReadAsAsync<Response<PostResponse.Post>>();
         }
 
         private async Task<string> GetJwtAsync()
