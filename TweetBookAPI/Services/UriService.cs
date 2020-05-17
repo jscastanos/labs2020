@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.WebUtilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TweetBook.Contracts.v1.Requests.Queries;
 using TweetBookAPI.Contracts.v1;
 
@@ -16,6 +13,7 @@ namespace TweetBookAPI.Services
         {
             _baseUri = baseUri;
         }
+
         public Uri GetAllPostUri(PaginationQuery pagination = null)
         {
             var uri = new Uri(_baseUri);

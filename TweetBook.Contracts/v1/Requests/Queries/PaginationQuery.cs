@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TweetBook.Contracts.v1.Requests.Queries
+﻿namespace TweetBook.Contracts.v1.Requests.Queries
 {
     public class PaginationQuery
     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TweetBookAPI.Cache
+﻿namespace TweetBookAPI.Cache
 {
     public class RedisCacheSettings
     {

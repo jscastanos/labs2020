@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using TweetBook.Contracts.v1.Requests.Queries;
 using TweetBook.Contracts.v1.Responses;
 using TweetBookAPI.Domain;
@@ -21,7 +19,6 @@ namespace TweetBookAPI.Helpers
                .GetAllPostUri(new PaginationQuery(pagination.PageNumber - 1, pagination.PageSize)).ToString()
                : null;
 
-
             return new PagedResponse<T>
             {
                 Data = response,
@@ -30,7 +27,6 @@ namespace TweetBookAPI.Helpers
                 NextPage = response.Any() ? nextPage : null,
                 PreviousPage = previousPage
             };
-
         }
     }
 }

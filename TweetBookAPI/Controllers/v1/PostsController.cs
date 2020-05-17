@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TweetBook.Contracts.v1.Requests.Queries;
 using TweetBook.Contracts.v1.Responses;
 using TweetBookAPI.Cache;
 using TweetBookAPI.Contracts.v1;
@@ -14,10 +15,8 @@ using TweetBookAPI.Contracts.v1.Requests;
 using TweetBookAPI.Contracts.v1.Responses;
 using TweetBookAPI.Domain;
 using TweetBookAPI.Extensions;
-using TweetBookAPI.Services;
-using TweetBook.Contracts.v1.Requests.Queries;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using TweetBookAPI.Helpers;
+using TweetBookAPI.Services;
 
 namespace TweetBookAPI.Controllers.v1
 {

@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TweetBook.Contracts.v1.Responses
 {
     public class PagedResponse<T>
     {
-        public PagedResponse() { }
+        public PagedResponse()
+        {
+        }
+
         public PagedResponse(IEnumerable<T> data)
         {
             Data = data;
