@@ -88,3 +88,5 @@ local_settings.py
 .env
 Scripts/
 db.sqlite3
+
+.vscode
