@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="wrapper">
+    <header class="wrapper">
         <h1>
             <a href="{% url 'articles:list' %}">
                 <h3>
@@ -17,6 +17,18 @@
                 </h3>
             </a>
         </h1>
+        <nav>
+            <ul>
+                <li>
+                    <form action="{% url 'accounts:logout' %}" method='POST' class="logout-link">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
         {% block content %}
         {% endblock %}
     </div>

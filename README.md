@@ -1,3 +1,3 @@
 # Hello Django
 
-A demo blog using Django Framework
+A demo blog app using Django Framework
