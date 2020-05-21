@@ -1,3 +1,3 @@
-# Hello_Django
+# Hello Django
 
-Demo project using Django framework
+A demo blog using Django Framework
