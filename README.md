@@ -1,4 +1,5 @@
-# Async_Await_Chain
+# Async/Await Chain Demo
+
 A sample code for chaining promises using await/async.
 
 ## What this code does?
