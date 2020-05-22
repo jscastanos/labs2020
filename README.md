@@ -7,4 +7,4 @@ A sample code for chaining promises using await/async.
 - Execute each funtions
 
 ## Output
-![output]('output.gif')
+![output](./output.gif)
