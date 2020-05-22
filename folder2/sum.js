@@ -7,7 +7,7 @@ const sum = async (data, result) => {
         answer += num
     }
 
-    await time.delay(3000)
+    await time.delay(1000)
 
     return result.push({
         'operation': 'addition',

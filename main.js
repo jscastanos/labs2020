@@ -20,7 +20,7 @@ const read_and_execute = async (folder) => {
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms)) // fake delay
 
 const print_when_all_done = async () => { // print result
-    await delay(3000)
+    await delay(1000)
 
     console.log({
         "result" : result
