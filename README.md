@@ -1,3 +1,3 @@
 # URL Screenshot App
 
-Loads list of url and take a screenshot for both mobile and desktop view of the website.
+A Simple UI for displaying the result of URL Screenshot using [Apify](https://apify.com/)
