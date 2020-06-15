@@ -2,12 +2,10 @@
 
 # TweetBookAPI
 
-![CodeFactor](https://img.shields.io/codefactor/grade/github/jscastanos/TweetBookAPI)
 ![Size](https://img.shields.io/github/repo-size/jscastanos/TweetbookAPI)
 ![.NET Core](https://github.com/jscastanos/TweetBookAPI/workflows/.NET%20Core/badge.svg?branch=master)
 
-A Demo RESTful API project created using .Net Core technology. </br>
-**NOTE**: This repo is for **EXPERIMENTATION** purpose only.
+A Demo RESTful API project created using .Net Core technology based on [Nick Chapsas' Tutorial](https://www.youtube.com/watch?v=sdlt3-ptt9g&list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU)
 
 ## Pre-requisites
 
@@ -29,7 +27,3 @@ A Demo RESTful API project created using .Net Core technology. </br>
 - [.Net Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [Swashbuckle](https://www.nuget.org/packages/Swashbuckle)
 - [JWT](https://jwt.io/)
-
-## Sources
-
-- [Nick Chapsas](https://www.youtube.com/watch?v=sdlt3-ptt9g&list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU)
