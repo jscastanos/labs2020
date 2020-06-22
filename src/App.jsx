@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import Form from './components/Form';
+import Items from './components/Items';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <Counter />
       <hr/>
       <Form />
+      <hr />
+      <Items />
     </div>
   );
 }
