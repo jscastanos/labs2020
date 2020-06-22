@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 
 const Counter = () => {
-    const [count, setCount] = useState(0);
+    const initialCount = 0;
+    const [count, setCount] = useState(initialCount);
 
     return(
         <React.Fragment>
-            <button onClick={() => setCount(count + 1)}>Count {count}</button>
-        </React.Fragment>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(initialCount)}>Reset</button>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Increment</button>
+            <button onClick={() => setCount(prevCount => prevCount - 1)}>Decrement</button>
+       </React.Fragment>
     )
 }
 
