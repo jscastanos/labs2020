@@ -5,9 +5,19 @@ void main() => runApp(MaterialApp(
         appBar: AppBar(
           title: Text('Demo App'),
           centerTitle: true,
+          backgroundColor: Colors.red[600],
         ),
         body: Center(
-          child: Text('Im a pirate'),
+          child: Text(
+            'Im a pirate',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+              color: Colors.grey[600],
+              fontFamily: 'Indie Flower',
+            ),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
           child: Text('FAB'),
