@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Demo App'),
-          centerTitle: true,
-          backgroundColor: Colors.red[600],
-        ),
-        body: Center(
-          child: Text(
-            'Im a pirate',
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.grey[600],
-              fontFamily: 'Indie Flower',
-            ),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Text('FAB'),
-        ),
-      ),
+      home: Home(),
     ));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Demo App'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Center(
+        child: Image.asset('assets/bg1.jpg'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Text('FAB'),
+        backgroundColor: Colors.red[600],
+      ),
+    );
+  }
+}
