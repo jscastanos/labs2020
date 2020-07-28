@@ -1,109 +1,86 @@
+import 'package:demo_flutter/quote.dart';
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() => runApp(MaterialApp(
-      home: NinjaCard(),
+      home: QouteList(),
     ));
 
-class NinjaCard extends StatefulWidget {
+class QouteList extends StatefulWidget {
   @override
-  _NinjaCardState createState() => _NinjaCardState();
+  _QouteListState createState() => _QouteListState();
 }
 
-class _NinjaCardState extends State<NinjaCard> {
-  int ninjaLevel = 0;
+class _QouteListState extends State<QouteList> {
+  List<Quote> quotes = [
+    Quote(
+      author: 'Someone',
+      text:
+          'Bacon ipsum dolor amet pork chop drumstick andouille sausage doner.',
+    ),
+    Quote(
+      author: 'No one',
+      text:
+          'Drumstick filet mignon bresaola leberkas beef ribs ribeye hamburger shankle porchetta tenderloin capicola swine biltong.',
+    ),
+    Quote(
+      author: 'Any one',
+      text:
+          'Meatloaf tail spare ribs biltong, tri-tip sausage frankfurter turkey turducken short ribs shankle pork belly kielbasa jerky chuck.',
+    ),
+    Quote(
+        author: 'You',
+        text:
+            'Swine turducken pig rump, turkey bacon drumstick kielbasa. Short loin pig pork loin landjaeger. Pancetta ham hock jowl chuck filet mignon frankfurter.')
+  ];
+
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: EdgeInsets.fromLTRB(10.0, 8.0, 10.0, 0.0),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(
+              height: 6.0,
+            ),
+            Text(
+              quote.author,
+              style: TextStyle(
+                fontSize: 14.0,
+                color: Colors.grey[800],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Ninja ID Card'),
+        backgroundColor: Colors.redAccent,
         centerTitle: true,
-        backgroundColor: Colors.grey[850],
-        elevation: 0.0,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            if (ninjaLevel != 100) {
-              ninjaLevel += 1;
-            }
-          });
-        },
-        child: Icon(Icons.add),
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/naruto.jpg'),
-                radius: 50.0,
-              ),
-            ),
-            Divider(
-              height: 90.0,
-              color: Colors.grey[800],
-            ),
-            Text(
-              'NAME',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              'Uzumaki Naruto',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Text(
-              'CURRENT NINJA LEVEL',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              '$ninjaLevel',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text(
-                  'uzumaki_naruto@konoha.com',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            )
-          ],
+        title: Text(
+          'Random Quotes',
+          style: TextStyle(
+            fontSize: 25.0,
+          ),
         ),
+      ),
+      body: Column(
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }
