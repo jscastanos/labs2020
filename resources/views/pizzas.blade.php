@@ -389,12 +389,14 @@
                 color: rgba(203, 213, 224, var(--text-opacity))
             }
         }
+
     </style>
 
     <style>
         body {
             font-family: 'Nunito';
         }
+
     </style>
 </head>
 
@@ -403,8 +405,18 @@
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <h1>Pizza List</h1>
-            <p>{{ $type }} - {{ $base}} - {{ $price }}</p>
+            @foreach ($pizzas as $pizza)
+                <div>
+                    {{ $loop->index }} - {{ $pizza['type'] }} - {{ $pizza['base'] }}
+                    @if ($loop->first)
+                        <span>| first pizza</span>
+                    @endif
 
+                    @if ($loop->last)
+                        <span>| last</span>
+                    @endif
+                </div>
+            @endforeach
         </div>
     </div>
 </body>
