@@ -8,6 +8,9 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     //
     public function index()
     {
@@ -46,6 +49,7 @@ class PizzaController extends Controller
     {
         $pizza = Pizza::findOrFail($id);
         $pizza->delete();
+
         return redirect('/pizzas');
     }
 }
