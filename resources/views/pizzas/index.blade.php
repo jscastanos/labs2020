@@ -5,7 +5,7 @@
         @foreach ($pizzas as $pizza)
             <div class="pizza-item">
                 <img src="/img/pizza.png" alt="pizza icon">
-                <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
+                <h4><a href="{{ route('pizza.show', $pizza->id) }}">{{ $pizza->name }}</a></h4>
             </div>
         @endforeach
     </div>
