@@ -19,6 +19,7 @@ class CreatePizzaTable extends Migration
             $table->string('type');
             $table->string('base');
             $table->string('name');
+            $table->json('toppings');
         });
     }
 
@@ -29,6 +30,6 @@ class CreatePizzaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pizza');
+        Schema::dropIfExists('pizzas');
     }
 }
