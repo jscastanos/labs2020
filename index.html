@@ -121,7 +121,23 @@
       </li>
     </ul>
   </div>
-  
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCONPmBCwG-nijBrn48DXFlDLf5mMEh9lY",
+      authDomain: "game-guide-7a69e.firebaseapp.com",
+      databaseURL: "https://game-guide-7a69e.firebaseio.com",
+      projectId: "game-guide-7a69e",
+      appId: "1:740499629516:web:7654a623a6b31c52f9e969"
+    };
+    firebase.initializeApp(firebaseConfig);
+    
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
