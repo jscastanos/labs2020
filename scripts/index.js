@@ -11,7 +11,7 @@ const setupUi = (user) => {
       .then((doc) => {
         const html = `
       <div>Logged in as ${user.email}</div>
-      <div>Logged in as ${doc.data().bio}</div>
+      <div> ${doc.data().bio}</div>
     `;
         accountDetails.innerHTML = html;
       });
