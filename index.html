@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Guide</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-  </head>
-  <body class="grey lighten-3">
-   
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Guide</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+</head>
+
+<body class="grey lighten-3">
+
   <!-- NAVBAR -->
   <nav class="z-depth-0 grey lighten-4">
     <div class="nav-wrapper container">
@@ -18,21 +17,21 @@
         <img alt="logo" src="img/logo.svg" style="width: 180px; margin-top: 10px;">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
-          </li>
-          <li class="logged-in">
-            <a href="#" class="grey-text" id="logout">Logout</a>
-          </li>
-          <li class="logged-in">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
-          </li>
-          <li class="logged-out">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
-          </li>
-          <li class="logged-out">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
-          </li>
+        <li class="logged-in">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in">
+          <a href="#" class="grey-text" id="logout">Logout</a>
+        </li>
+        <li class="logged-in">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
         </span>
       </ul>
     </div>
@@ -133,7 +132,7 @@
       appId: "1:740499629516:web:7654a623a6b31c52f9e969"
     };
     firebase.initializeApp(firebaseConfig);
-    
+
     // make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
@@ -142,5 +141,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-  </body>
+</body>
+
 </html>
