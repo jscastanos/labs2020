@@ -1,21 +1,23 @@
-import { Map } from 'immutable';
+import { produce } from 'immer';
 
-// From this code
-// let book = { title: 'Harry Potter' };
+// From using Map immutable
+// let book = Map({ title: 'Harry Potter' });
 
 // function publish(book) {
-//   book.isPublished = true;
+//   return book.set('isPublished', true);
 // }
 
-// publish(book);
+// book = publish(book);
 
-// using Map immutable
-let book = Map({ title: 'Harry Potter' });
+let book = { title: 'Harry Potter' };
 
 function publish(book) {
-  return book.set('isPublished', true);
+  return produce(book, (draftBook) => {
+    draftBook.isPublished = true;
+  });
 }
 
-book = publish(book);
+let updated = publish(book);
 
-console.log(book.toJS());
+console.log(book);
+console.log(updated);
