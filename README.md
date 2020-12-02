@@ -13,3 +13,4 @@ A collection of demo and tutorial projects
 - [Django REST](./django_rest)
 - [React + Airtable](./react_airtable)
 - [Async/Await Chain](./async_await_chain)
+- [Django Blog](./django_blog)
