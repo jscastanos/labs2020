@@ -14,3 +14,4 @@ A collection of demo and tutorial projects
 - [React + Airtable](./react_airtable)
 - [Async/Await Chain](./async_await_chain)
 - [Django Blog](./django_blog)
+- [Tim Corey's Weekly C# Challenges](./tc_weekly_challenges)
