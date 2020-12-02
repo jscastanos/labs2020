@@ -12,3 +12,4 @@ A collection of demo and tutorial projects
 - [URL Screenshot App](./url_screenshot_app)
 - [Django REST](./django_rest)
 - [React + Airtable](./react_airtable)
+- [Async/Await Chain](./async_await_chain)
