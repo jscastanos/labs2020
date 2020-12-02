@@ -24,4 +24,3 @@ Here's a collection of my solutions to [Tim Corey](https://github.com/TimCorey)'
 
 - These solutions are not guaranted correct since I'm only a free user and I can't view the solutions that Tim Corey provide every week.
 - If you find a better solution than what I did, please tell me. I'm really open to any suggestions.
-- The purpose of this repo is to track my progress and learning and not to promote any illegal or bad behavoir towards the creator of this challenge.
