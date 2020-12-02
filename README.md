@@ -7,6 +7,7 @@ A collection of demo and tutorial projects to learn or test new technologies and
 ### ASP Net
 
 - [Tim Corey's Weekly C# Challenges](./tc_weekly_challenges)
+- [Tweetbook API](./tweetbook_api)
 
 ### Django
 
@@ -15,8 +16,8 @@ A collection of demo and tutorial projects to learn or test new technologies and
 
 ### Firebase
 
-- [Game Guide](./game_guide)
 - [Cloud Cafe](./cloud_cafe)
+- [Game Guide](./game_guide)
 
 ### Flutter
 
@@ -28,9 +29,9 @@ A collection of demo and tutorial projects to learn or test new technologies and
 
 ### React
 
-- [React Redux Jest Enzyme](./react_redux_jest_enzyme)
 - [React + Airtable](./react_airtable)
 - [React Hooks](./react_hooks)
+- [React Redux Jest Enzyme](./react_redux_jest_enzyme)
 
 ### Redux
 
@@ -38,8 +39,8 @@ A collection of demo and tutorial projects to learn or test new technologies and
 
 ### Vanilla JS
 
-- [URL Screenshot App](./url_screenshot_app)
 - [Async/Await Chain](./async_await_chain)
+- [URL Screenshot App](./url_screenshot_app)
 
 <br/>
 
@@ -88,7 +89,7 @@ A collection of demo and tutorial projects to learn or test new technologies and
 
 ### Notes
 
-- The purpose of this repo is to track my progress and learning and not to promote any illegal activity or bad behavior towards the community
+- The purpose of this repo is to track my progress and learning and not promote any illegal activity or bad behavior towards the community
 
 <br/>
 
