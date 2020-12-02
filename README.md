@@ -10,3 +10,4 @@ A collection of demo and tutorial projects
 - [Demo Flutter](./demo_flutter)
 - [React Hooks](./react_hooks)
 - [URL Screenshot App](./url_screenshot_app)
+- [Django REST](./django_rest)
