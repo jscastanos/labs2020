@@ -2,7 +2,7 @@
 
 # Labs 🚀
 
-A collection of demo and tutorial projects to learn or test new technologies and trends.
+A collection of demo and tutorial projects that I learn in year 2020
 
 ### ASP Net
 
@@ -48,13 +48,13 @@ A collection of demo and tutorial projects to learn or test new technologies and
 
 <p align="left">
    <a href="https://www.w3schools.com/cs/" target="_blank"> 
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/>
    </a>
    <a href="https://www.djangoproject.com/" target="_blank"> 
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/django/django-original.svg" alt="django" width="40" height="40"/>
+    <img src="hhttps://github.com/jscastanos/devicon/blob/master/icons/django/django-original.svg" alt="django" width="40" height="40"/>
   </a>
   <a href="https://dotnet.microsoft.com/" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/>
   </a>
   <a href="https://firebase.google.com/" target="_blank">
     <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
@@ -63,25 +63,25 @@ A collection of demo and tutorial projects to learn or test new technologies and
     <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/>
   </a>
   <a href="https://www.w3.org/html/" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
   </a>
   <a href="https://jestjs.io" target="_blank">
     <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/>
   </a>
   <a href="https://laravel.com/" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/>
   </a>
   <a href="https://reactjs.org/" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
   </a>
   <a href="https://sass-lang.com" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/>
   </a>
   <a href="https://www.typescriptlang.org/" target="_blank">
-    <img src="https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
   </a> 
 </p>
 
