@@ -40,7 +40,7 @@ A collection of demo and tutorial projects that I learn in year 2020
 ### Vanilla JS
 
 - [Async/Await Chain](./async_await_chain)
-- [URL Screenshot App](./url_screenshot_app)
+- [URL Screenshot App](./url_screenshot_app) - **Deployed in Heroku**
 
 <br/>
 
@@ -51,7 +51,7 @@ A collection of demo and tutorial projects that I learn in year 2020
     <img src="https://github.com/jscastanos/devicon/blob/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/>
    </a>
    <a href="https://www.djangoproject.com/" target="_blank"> 
-    <img src="hhttps://github.com/jscastanos/devicon/blob/master/icons/django/django-original.svg" alt="django" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/django/django-original.svg" alt="django" width="40" height="40"/>
   </a>
   <a href="https://dotnet.microsoft.com/" target="_blank">
     <img src="https://github.com/jscastanos/devicon/blob/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/>
@@ -63,7 +63,7 @@ A collection of demo and tutorial projects that I learn in year 2020
     <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/>
   </a>
   <a href="https://www.w3.org/html/" target="_blank">
-    <img src="https://github.com/jscastanos/devicon/blob/master/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/html5/html5-original.svg" alt="html5" width="40" height="40"/>
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
     <img src="https://github.com/jscastanos/devicon/blob/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
@@ -72,7 +72,7 @@ A collection of demo and tutorial projects that I learn in year 2020
     <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/>
   </a>
   <a href="https://laravel.com/" target="_blank">
-    <img src="https://github.com/jscastanos/devicon/blob/master/laravel/laravel-plain-wordmark.svg" alt="laravel" width="40" height="40"/>
+    <img src="https://github.com/jscastanos/devicon/blob/master/icons/laravel/laravel-plain.svg" alt="laravel" width="40" height="40"/>
   </a>
   <a href="https://reactjs.org/" target="_blank">
     <img src="https://github.com/jscastanos/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
@@ -83,6 +83,9 @@ A collection of demo and tutorial projects that I learn in year 2020
   <a href="https://www.typescriptlang.org/" target="_blank">
     <img src="https://github.com/jscastanos/devicon/blob/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/>
   </a> 
+   <a href="https://www.heroku.com/" target="_blank">
+      <img src="https://github.com/jscastanos/devicon/blob/master/icons/heroku/heroku-original.svg" alt="heroku" width="40" height="40"/>
+   </a>
 </p>
 
 <br/>
