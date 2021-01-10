@@ -2,7 +2,7 @@
 
 # Labs 🚀
 
-A collection of demo and tutorial projects that I learn in year 2020
+A collection of demo and tutorial projects that I learn in the year 2020
 
 ### ASP Net
 
@@ -89,13 +89,7 @@ A collection of demo and tutorial projects that I learn in year 2020
 </p>
 
 <br/>
-
-### Notes
-
-- The purpose of this repo is to track my progress and learning and not promote any illegal activity or bad behavior towards the community
-
-<br/>
-
+ 
 ### Attribution
 
 - [People vector created by pch.vector](https://www.freepik.com/vectors/people)
